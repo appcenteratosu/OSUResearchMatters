@@ -1,0 +1,10 @@
+framework module CSVParser {
+  umbrella header "CSVParser.h"
+
+  export *
+  module * { export * }
+}
+
+module CSVParser.Swift {
+    header "CSVParser-Swift.h"
+}
