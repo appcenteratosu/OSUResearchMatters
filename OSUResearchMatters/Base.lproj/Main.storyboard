@@ -297,6 +297,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundUIView" destination="wQj-Qm-oRv" id="SdS-Mr-gV5"/>
                                     <outlet property="calendarDayLabel" destination="hD4-hc-mWE" id="OSD-jI-a1Q"/>
                                     <outlet property="dayOfWeekLabel" destination="c8m-AR-y5n" id="Lmj-e7-8M7"/>
                                     <outlet property="eventsTableView" destination="Gca-7n-evx" id="OSC-tl-N0r"/>

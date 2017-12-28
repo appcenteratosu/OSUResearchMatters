@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
 
@@ -29,6 +30,13 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    func setupBackgroundView() {
+        backgroundUIView.snp.makeConstraints { (make) in
+            make.height.equalTo()
+        }
+    }
+    
+    @IBOutlet weak var backgroundUIView: UIView!
     @IBOutlet weak var dayOfWeekLabel: UILabel!
     @IBOutlet weak var calendarDayLabel: UILabel!
     @IBOutlet weak var monthYearLabel: UILabel!
