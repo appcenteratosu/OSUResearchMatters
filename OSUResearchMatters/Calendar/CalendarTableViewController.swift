@@ -14,14 +14,16 @@ class CalendarTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Start download of events
-        print("Starting Data Grab")
+        CPM().write1(text: "Starting Calendar Data Grab and Sort")
         getData { (dates, events) in
             self.datesForDataSource = dates
             self.eventsForDataSource = events
-            print("Done")
             // async update UI when completed
+            CPM().write2(text1: "Done Fetching and Organizing Calendar Data", text2: "Starting Table Reload with Sorted Data")
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                CPM().write1(text: "Done reloading table data")
             }
         }
 
@@ -38,7 +40,8 @@ class CalendarTableViewController: UITableViewController {
     func getData(completion: @escaping ([Date], [[Event]]) -> ()) {
         let manager = CSVDataManager()
         manager.formatDataForNewEventObject(url: "https://trumba.com/calendars/okstate-research.csv") { (events) in
-            print("Completed Data Fetch (CalendarTVC)")
+            print("Completed Calendar Data Fetch (CalendarTVC)")
+            print("* Starting Data Sort (CalendarTVC)")
             self.sortEventsByDate(eventsToSort: events, completion: { (sortedEvents) in
                 var dates: [Date] = []
                 var events: [[Event]] = []
@@ -58,12 +61,9 @@ class CalendarTableViewController: UITableViewController {
         for event in eventsToSort {
             if let date = event.sortDate {
                 if dates.keys.contains(date) {
-                    print("Dates list has date in it")
                     dates[date]!.append(event)
                 } else {
-                    print("No date found in list, adding now")
                     dates[date] = [event]
-                    print(dates.count)
                 }
             }
         }
@@ -92,7 +92,7 @@ class CalendarTableViewController: UITableViewController {
         let cellItems = eventsForDataSource[indexPath.row]
         let count = CGFloat(cellItems.count)
         if count > 2 {
-            heightDictionary[indexPath.row] = count * 35
+            heightDictionary[indexPath.row] = count * 45
         } else {
             heightDictionary[indexPath.row] = 100
         }

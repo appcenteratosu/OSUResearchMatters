@@ -28,9 +28,10 @@ class NewsFeedTableViewController: UITableViewController {
     var imageList: [UIImage] = []
     
     func updateTableData() {
+        CPM().write1(text: "Starting News Data Grab (NewsTVC)")
         beginUpdatingData { (articles) in
             self.articlesList = articles
-            print("Done fetching")
+            CPM().write1(text: "Done fetching News Data")
         
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -51,17 +52,9 @@ class NewsFeedTableViewController: UITableViewController {
                 do {
                     let newsItems: [Articlee] = try items.value()
                     articles = newsItems
-                    print("Count: ", newsItems.count)
                 } catch {
                     print(error.localizedDescription)
                 }
-                
-                //
-                for article in articles {
-                    print(article.imageURL)
-                }
-                
-                //
                 
                 completion(articles)
                 
@@ -123,7 +116,7 @@ class NewsFeedTableViewController: UITableViewController {
 
         UIApplication.shared.open(url, options: [:]) { (done) in
             if done {
-                print("DONE")
+                CPM().write1(text: "Done Loading Page")
             }
         }
         

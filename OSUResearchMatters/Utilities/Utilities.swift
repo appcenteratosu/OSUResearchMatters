@@ -96,8 +96,7 @@ class Utilities {
 
     func getDayOfWeek(date: Date) -> String {
         let weekday = Calendar.current.component(.weekday, from: date)
-        print(weekday)
-        
+
         switch weekday {
         case 1:
             return "Sun"

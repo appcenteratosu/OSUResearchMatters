@@ -15,6 +15,7 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
     override func awakeFromNib() {
         super.awakeFromNib()
         eventsTableView.delegate = self
+        setupBackgroundView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,9 +32,12 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
     }
     
     func setupBackgroundView() {
-        backgroundUIView.snp.makeConstraints { (make) in
-            make.height.equalTo()
-        }
+//        backgroundUIView.snp.makeConstraints { (make) in
+//            make.height.equalTo(self.frame.height)
+//        }
+//        dayOfWeekLabel.snp.makeConstraints { (make) in
+//            make.left.equalTo(backgroundUIView)
+//        }
     }
     
     @IBOutlet weak var backgroundUIView: UIView!
@@ -54,7 +58,7 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
         }
         
         cell.timeLabel.text = events[indexPath.row].sTime
-        cell.descriptionLabel.text = events[indexPath.row].desc
+        cell.descriptionLabel.text = events[indexPath.row].subject
         
         return cell
     }
