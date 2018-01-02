@@ -57,7 +57,17 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
             cell.descriptionLabel.numberOfLines = 4
         }
         
-        cell.timeLabel.text = events[indexPath.row].sTime
+        if events[indexPath.row].allDayEvent == "TRUE" {
+            cell.timeLabel.text = "All Day Event"
+        } else {
+            let time = events[indexPath.row].sTime
+            let date = Utilities().toDate(strDate: events[indexPath.row].sDate, withTime: time)
+            let formatter = DateFormatter()
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            let ttime = formatter.string(from: date!)
+            cell.timeLabel.text = ttime
+        }
         cell.descriptionLabel.text = events[indexPath.row].subject
         
         return cell

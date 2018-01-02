@@ -9,13 +9,13 @@
 import Foundation
 
 class CPM {
-    func write1(text: String) {
+    func write(text: String) {
         print("*-------------------------*")
         print("> ", text)
         print("*-------------------------*")
     }
     
-    func write2(text1: String, text2: String) {
+    func write(text1: String, text2: String) {
         print("*-------------------------*")
         print("> ", text1)
         print("> ", text2)

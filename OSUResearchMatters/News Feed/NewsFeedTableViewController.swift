@@ -28,10 +28,10 @@ class NewsFeedTableViewController: UITableViewController {
     var imageList: [UIImage] = []
     
     func updateTableData() {
-        CPM().write1(text: "Starting News Data Grab (NewsTVC)")
+        CPM().write(text: "Starting News Data Grab (NewsTVC)")
         beginUpdatingData { (articles) in
             self.articlesList = articles
-            CPM().write1(text: "Done fetching News Data")
+            CPM().write(text: "Done fetching News Data")
         
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -104,7 +104,7 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 187
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,7 +116,7 @@ class NewsFeedTableViewController: UITableViewController {
 
         UIApplication.shared.open(url, options: [:]) { (done) in
             if done {
-                CPM().write1(text: "Done Loading Page")
+                CPM().write(text: "Done Loading Page")
             }
         }
         

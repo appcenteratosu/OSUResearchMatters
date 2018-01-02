@@ -9,21 +9,28 @@
 import UIKit
 
 class CalendarTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Start Spinner
+        CPM().write(text: "Starting Spinner")
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner.center = self.view.center
+        spinner.startAnimating()
+        
         // Start download of events
-        CPM().write1(text: "Starting Calendar Data Grab and Sort")
+        CPM().write(text: "Starting Calendar Data Grab and Sort")
         getData { (dates, events) in
             self.datesForDataSource = dates
             self.eventsForDataSource = events
             // async update UI when completed
-            CPM().write2(text1: "Done Fetching and Organizing Calendar Data", text2: "Starting Table Reload with Sorted Data")
+            CPM().write(text1: "Done Fetching and Organizing Calendar Data", text2: "Starting Table Reload with Sorted Data")
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                CPM().write1(text: "Done reloading table data")
+                CPM().write(text: "Done reloading table data")
+                spinner.stopAnimating()
             }
         }
 

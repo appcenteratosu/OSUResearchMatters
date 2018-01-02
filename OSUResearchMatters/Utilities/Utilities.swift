@@ -134,4 +134,28 @@ class Utilities {
         return dateyear
     }
     
+//    func getTime(date:)
+    
+    struct Spinner {
+        let view: UIViewController
+        let spinner = UIActivityIndicatorView()
+        
+        init(view: UIViewController) {
+            self.view = view
+            spinner.activityIndicatorViewStyle = .whiteLarge
+            spinner.hidesWhenStopped = true
+            view.view.addSubview(spinner)
+            spinner.center = view.view.center
+        }
+        
+        func start() {
+            spinner.startAnimating()
+        }
+        
+        func stop() {
+            spinner.stopAnimating()
+            spinner.removeFromSuperview()
+        }
+    }
+    
 }
