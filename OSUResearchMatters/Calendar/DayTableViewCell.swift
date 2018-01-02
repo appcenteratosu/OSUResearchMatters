@@ -58,7 +58,7 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
         }
         
         if events[indexPath.row].allDayEvent == "TRUE" {
-            cell.timeLabel.text = "All Day Event"
+            cell.timeLabel.text = "All Day"
         } else {
             let time = events[indexPath.row].sTime
             let date = Utilities().toDate(strDate: events[indexPath.row].sDate, withTime: time)
