@@ -218,7 +218,23 @@ class CalendarDetailViewController: UITableViewController {
     }
     
     @IBAction func shareCalendarEvent(_ sender: UIBarButtonItem) {
-    
+        let name = cellData!.subject
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        let s = createDateForCalendarEvent(stringDate: cellData!.sDate, stringTime: cellData!.sTime)
+        let start = formatter.string(from: s)
+        let e = createDateForCalendarEvent(stringDate: cellData!.eDate, stringTime: cellData!.eTime)
+        let end = formatter.string(from: e)
+        
+        let summary: String = """
+        \(name)
+        
+        \(start) - \(end)
+        """
+        
+        let actionSheet = UIActivityViewController(activityItems: [summary], applicationActivities: nil)
+        present(actionSheet, animated: true, completion: nil)
     }
     
     
