@@ -10,6 +10,7 @@
 		2216B0704AB43C97E7BBB322 /* Pods_OSUResearchMatters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA447C4434E0F0ED96AC2F91 /* Pods_OSUResearchMatters.framework */; };
 		307D4E73ABD2EE7C77FCF281 /* Pods_OSUResearchMattersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */; };
 		732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */; };
+		737474581FFEED40005396DE /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737474571FFEED40005396DE /* ColorCode.swift */; };
 		73B4FA721FFC5151004828EB /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */; };
 		73B4FA761FFD9479004828EB /* CalendarDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */; };
 		73BFC34A1FF424F800BB1C11 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		460C71F91177192A00731A67 /* Pods-OSUResearchMattersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSUResearchMattersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSUResearchMattersTests/Pods-OSUResearchMattersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSUResearchMattersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		737474571FFEED40005396DE /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
 		73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetailTableViewCell.swift; sourceTree = "<group>"; };
 		73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
@@ -140,14 +142,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		73BFC3481FF424C400BB1C11 /* Calendar */ = {
+		737474551FFEED00005396DE /* Calendar Detail */ = {
+			isa = PBXGroup;
+			children = (
+				73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */,
+				73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */,
+			);
+			path = "Calendar Detail";
+			sourceTree = "<group>";
+		};
+		737474561FFEED21005396DE /* Main Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */,
 				73BFC34C1FF428C300BB1C11 /* DayTableViewCell.swift */,
-				73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */,
-				73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */,
 				73BFC34B1FF4289C00BB1C11 /* Events */,
+			);
+			path = "Main Calendar";
+			sourceTree = "<group>";
+		};
+		73BFC3481FF424C400BB1C11 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				737474571FFEED40005396DE /* ColorCode.swift */,
+				737474561FFEED21005396DE /* Main Calendar */,
+				737474551FFEED00005396DE /* Calendar Detail */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -564,6 +583,7 @@
 				73D3C43B1FE9B1B10028FF0C /* NewsFeedTableViewController.swift in Sources */,
 				732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */,
 				73C0BD3A1FEF06D300DED67E /* CSVDataManager.swift in Sources */,
+				737474581FFEED40005396DE /* ColorCode.swift in Sources */,
 				73D3C40B1FE99D550028FF0C /* AppDelegate.swift in Sources */,
 				73D3C4481FE9B7690028FF0C /* Utilities.swift in Sources */,
 				73B4FA721FFC5151004828EB /* CalendarDetailViewController.swift in Sources */,

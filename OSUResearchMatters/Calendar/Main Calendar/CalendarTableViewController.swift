@@ -182,7 +182,52 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     
     @IBOutlet weak var searchBar: UISearchBar!
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        if searchBar.text!.count > 0 {
+            if let searchItems = searchBar.text?.components(separatedBy: " ") {
+                
+                var searchResults: [Event] = []
+                
+                var eventsToSearch: [Event] = []
+                for set in eventsForDataSource {
+                    eventsToSearch.append(contentsOf: set)
+                }
+                
+                for event in eventsToSearch {
+                    if event.contains(searchItems: searchItems) {
+                        searchResults.append(event)
+                    }
+                }
+                
+                if searchResults.count > 0 {
+                    self.sortEventsByDate(eventsToSort: searchResults, completion: { (sortedEvents) in
+                        var dates: [Date] = []
+                        var events: [[Event]] = []
+                        for item in sortedEvents {
+                            dates.append(item.key)
+                            let eventList = item.value
+                            events.append(eventList)
+                        }
+                        self.datesForDataSource = dates
+                        self.eventsForDataSource = events
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.view.endEditing(true)
+                        }
+                    })
+                }
+            }
+        } else {
+            getData { (dates, events) in
+                self.datesForDataSource = dates
+                self.eventsForDataSource = events
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.view.endEditing(true)
+                }
+            }
+        }
     }
     
     
