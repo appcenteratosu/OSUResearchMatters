@@ -37,7 +37,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         //Hide Nav
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
     }
     
     var datesForDataSource: [Date] = []
