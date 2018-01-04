@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="2135" y="-366"/>
         </scene>
-        <!--Title-->
+        <!--Calendar-->
         <scene sceneID="u6a-xF-bfY">
             <objects>
                 <tableViewController id="yKn-pN-Xu9" customClass="CalendarTableViewController" customModule="OSUResearchMatters" customModuleProvider="target" sceneMemberID="viewController">
@@ -195,7 +195,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="i4f-Im-Gn1">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="i4f-Im-Gn1">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -313,7 +313,7 @@
                             <outlet property="delegate" destination="yKn-pN-Xu9" id="4To-5m-Ina"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="vuN-sS-dEK"/>
+                    <navigationItem key="navigationItem" title="Calendar" largeTitleDisplayMode="always" id="vuN-sS-dEK"/>
                     <connections>
                         <segue destination="dT5-ma-fUt" kind="show" identifier="showCalDetail" id="I6A-Lz-SCn"/>
                     </connections>
@@ -395,6 +395,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="#OSURESERCHMATTERS" id="skt-52-pEM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="MPZ-9B-l1j"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="action" id="RfL-L1-Yon">
                                 <connections>
@@ -500,7 +501,7 @@
                     <tabBarItem key="tabBarItem" title="Calendar" image="Calendar" id="XZC-tY-eE8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Tda-70-0YM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="largeTitleTextAttributes">
