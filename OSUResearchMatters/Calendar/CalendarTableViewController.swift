@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarTableViewController: UITableViewController, DidSelectRowDelegate {
+class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,6 +176,13 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate {
         indicator.hidesWhenStopped = true
         indicator.center = self.view.center
         self.view.addSubview(indicator)
+    }
+    
+    // MARK: - Search Functionality
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
     }
     
     

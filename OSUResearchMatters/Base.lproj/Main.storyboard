@@ -200,6 +200,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <connections>
+                                <outlet property="delegate" destination="yKn-pN-Xu9" id="XCx-0m-3XM"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dayCell" rowHeight="100" id="Vxe-MO-nlN" customClass="DayTableViewCell" customModule="OSUResearchMatters" customModuleProvider="target">
@@ -303,6 +306,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="#OSURESEARCHMATTERS" largeTitleDisplayMode="always" id="vuN-sS-dEK"/>
                     <connections>
+                        <outlet property="searchBar" destination="KRn-WQ-UzP" id="NHU-QC-fEl"/>
                         <segue destination="dT5-ma-fUt" kind="show" identifier="showCalDetail" id="I6A-Lz-SCn"/>
                     </connections>
                 </tableViewController>
