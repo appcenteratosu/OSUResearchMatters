@@ -8,9 +8,11 @@
 
 import UIKit
 import SnapKit
+import Foundation
 
 class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
 
+    var dsDelegate: DidSelectRowDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,6 +74,16 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = events[indexPath.row]
+        dsDelegate?.eventWasSeleted(event: event)
+        print(event.subject)
+    }
 
+    
 }
 
+protocol DidSelectRowDelegate {
+    func eventWasSeleted(event: Event)
+}

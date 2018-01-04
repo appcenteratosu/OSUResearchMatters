@@ -8,16 +8,15 @@
 
 import UIKit
 
-class CalendarTableViewController: UITableViewController {
+class CalendarTableViewController: UITableViewController, DidSelectRowDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Start Spinner
         CPM().write(text: "Starting Spinner")
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        spinner.center = self.view.center
-        spinner.startAnimating()
+        indicator.startAnimating()
+        indicator.backgroundColor = #colorLiteral(red: 0.9633523822, green: 0.5470512509, blue: 0.2126187086, alpha: 1)
         
         // Start download of events
         CPM().write(text: "Starting Calendar Data Grab and Sort")
@@ -30,10 +29,15 @@ class CalendarTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 CPM().write(text: "Done reloading table data")
-                spinner.stopAnimating()
+                self.indicator.stopAnimating()
             }
         }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Hide Nav
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     var datesForDataSource: [Date] = []
@@ -105,6 +109,7 @@ class CalendarTableViewController: UITableViewController {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayTableViewCell
         cell.events = cellItems
+        cell.dsDelegate = self
         
         let day = datesForDataSource[indexPath.row]
         let dayOfWeek = Utilities().getDayOfWeek(date: day)
@@ -163,19 +168,37 @@ class CalendarTableViewController: UITableViewController {
     
     
     // MARK: Views
+    var indicator = UIActivityIndicatorView()
+    
+    func makeActivityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator.activityIndicatorViewStyle = .gray
+        indicator.hidesWhenStopped = true
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
     
     
+    // MARK: - DidSelectRowDelegate
+    func eventWasSeleted(event: Event) {
+        performSegue(withIdentifier: "showCalDetail", sender: event)
+    }
     
     
-    
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCalDetail" {
+            if let vc = segue.destination as? CalendarDetailViewController {
+                if let event = sender as? Event {
+                    vc.cellData = event
+                }
+            }
+        }
     }
-    */
+    
+    @IBAction func returnFromDetail(segue: UIStoryboardSegue) {
+    
+    }
 
 }

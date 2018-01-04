@@ -54,6 +54,34 @@ class Utilities {
         
     }
     
+    func getFormattedDateFromFormattedString(dateString: String) -> (string: String, date: Date) {
+        let components = dateString.components(separatedBy: "/")
+        let month = components[0]
+        let day = components[1]
+        let year = components[2]
+        
+        let iDay = Int(String(day))
+        let iMonth = Int(String(month))
+        let iYear = Int(String(year))
+        
+        var dcomponents = DateComponents()
+        dcomponents.day = iDay
+        dcomponents.month = iMonth
+        dcomponents.year = iYear
+        
+        let cal = Calendar(identifier: .gregorian)
+        let date = cal.date(from: dcomponents)
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        
+        let formattedDate = formatter.string(from: date!)
+        
+        return (formattedDate, date!)
+        
+    }
+    
     func toDate(str: String) -> Date? {
         let components = str.components(separatedBy: "/")
         guard let month = Int(components[0]) else {return nil}
