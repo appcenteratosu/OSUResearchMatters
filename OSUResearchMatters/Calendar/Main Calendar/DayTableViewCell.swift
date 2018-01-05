@@ -71,6 +71,8 @@ class DayTableViewCell: UITableViewCell, UITableViewDelegate, UITableViewDataSou
             cell.timeLabel.text = ttime
         }
         cell.descriptionLabel.text = events[indexPath.row].subject
+        cell.colorCode.backgroundColor = events[indexPath.row].color
+        cell.colorCode.layer.cornerRadius = 5
         
         return cell
     }
