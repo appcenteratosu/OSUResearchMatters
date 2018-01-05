@@ -167,7 +167,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
 
     
     
-    // MARK: Views
+    // MARK: - Views
     var indicator = UIActivityIndicatorView()
     
     func makeActivityIndicator() {
@@ -235,6 +235,54 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     func eventWasSeleted(event: Event) {
         performSegue(withIdentifier: "showCalDetail", sender: event)
     }
+    
+    
+    // MARK: - Legend Key Popup
+    
+    @IBAction func openLegend(_ sender: UIBarButtonItem) {
+        
+        setupLegend {
+            Utilities.Animation().animateIn(view: legend, vc: self)
+        }
+        
+    }
+    
+    
+    @IBOutlet var legend: UIView!
+    
+    @IBOutlet var VPR: UIView!
+    @IBOutlet var DASNR: UIView!
+    @IBOutlet var ArtsSciences: UIView!
+    @IBOutlet var Business: UIView!
+    @IBOutlet var Education: UIView!
+    @IBOutlet var CEAT: UIView!
+    @IBOutlet var HumanSciences: UIView!
+    @IBOutlet var CVHS: UIView!
+    @IBOutlet var GradCollege: UIView!
+    @IBOutlet var Library: UIView!
+    @IBOutlet var TDC: UIView!
+    @IBOutlet var CenterForHealthSciences: UIView!
+    @IBOutlet var SpecialPrograms: UIView!
+    
+    func setupLegend(completion: () -> ()) {
+        legend.center = self.view.center
+        legend.layer.cornerRadius = 5
+        
+        let colorCodes = [VPR,DASNR, ArtsSciences,Business,Education,CEAT,HumanSciences,CVHS,GradCollege,Library,TDC,CenterForHealthSciences,SpecialPrograms]
+        
+        for view in colorCodes {
+            view?.layer.cornerRadius = 5
+            view?.layer.borderWidth = 2
+            view?.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        completion()
+    }
+    
+    @IBAction func closeLegend(_ sender: UIButton) {
+        Utilities.Animation().animateOut(view: legend, vc: self)
+    }
+    
+    
     
     
     // MARK: - Navigation

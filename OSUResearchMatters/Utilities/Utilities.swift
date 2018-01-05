@@ -186,4 +186,26 @@ class Utilities {
         }
     }
     
+    //MARK: - Animation
+    struct Animation {
+        func animateIn(view: UIView, vc: UIViewController) {
+            view.center = CGPoint(x: vc.view.center.x, y: vc.view.center.y)
+            view.layer.cornerRadius = 5
+            view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            vc.view.addSubview(view)
+            UIView.animate(withDuration: 0.3) {
+                view.transform = CGAffineTransform.identity
+            }
+            vc.navigationController?.view.bringSubview(toFront: view)
+        }
+        
+        func animateOut(view: UIView, vc: UIViewController) {
+            UIView.animate(withDuration: 0.3, animations: {
+                view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            }) { (done) in
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
 }
