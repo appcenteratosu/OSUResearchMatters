@@ -23,6 +23,6 @@ class CalendarDetailTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var itemValueLabel: UILabel!
+    @IBOutlet weak var itemValueLabel: UITextView!
     
 }
