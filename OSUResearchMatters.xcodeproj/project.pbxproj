@@ -12,6 +12,9 @@
 		732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */; };
 		737474581FFEED40005396DE /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737474571FFEED40005396DE /* ColorCode.swift */; };
 		738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */; };
+		738F0AF620041E92007088E7 /* ResearchWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */; };
+		738F0AFA20041F3B007088E7 /* RWDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */; };
+		738F0AFC20042055007088E7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AFB20042055007088E7 /* Day.swift */; };
 		73B4FA721FFC5151004828EB /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */; };
 		73B4FA761FFD9479004828EB /* CalendarDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */; };
 		73BFC34A1FF424F800BB1C11 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */; };
@@ -64,6 +67,9 @@
 		732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		737474571FFEED40005396DE /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
 		738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResearchComplianceViewController.swift; path = OSUResearchMatters/Contact/ResearchComplianceViewController.swift; sourceTree = SOURCE_ROOT; };
+		738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchWeekViewController.swift; sourceTree = "<group>"; };
+		738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWDayTableViewCell.swift; sourceTree = "<group>"; };
+		738F0AFB20042055007088E7 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetailTableViewCell.swift; sourceTree = "<group>"; };
 		73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,24 @@
 			path = "Main Calendar";
 			sourceTree = "<group>";
 		};
+		738F0AF720041E9C007088E7 /* Research Week */ = {
+			isa = PBXGroup;
+			children = (
+				738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */,
+				738F0AF820041EE6007088E7 /* Day View Controller */,
+			);
+			path = "Research Week";
+			sourceTree = "<group>";
+		};
+		738F0AF820041EE6007088E7 /* Day View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */,
+				738F0AFB20042055007088E7 /* Day.swift */,
+			);
+			path = "Day View Controller";
+			sourceTree = "<group>";
+		};
 		73BFC3481FF424C400BB1C11 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +272,7 @@
 				73BFC3481FF424C400BB1C11 /* Calendar */,
 				73D3C43E1FE9B1CD0028FF0C /* News Feed */,
 				73DDB1922002CDC6004F579B /* Contact */,
+				738F0AF720041E9C007088E7 /* Research Week */,
 				73D3C4131FE99D550028FF0C /* Assets.xcassets */,
 				73D3C4151FE99D550028FF0C /* LaunchScreen.storyboard */,
 				73D3C4181FE99D550028FF0C /* Info.plist */,
@@ -596,6 +621,7 @@
 			files = (
 				73C0BD381FEF06D300DED67E /* CSwiftV.swift in Sources */,
 				73DDB1962002CF85004F579B /* Contact.swift in Sources */,
+				738F0AFC20042055007088E7 /* Day.swift in Sources */,
 				73C0BD371FEF06D300DED67E /* Event.swift in Sources */,
 				73BFC34F1FF42D5300BB1C11 /* EventsTableViewCell.swift in Sources */,
 				73C0BCE51FEEED6800DED67E /* WebViewViewController.swift in Sources */,
@@ -606,6 +632,7 @@
 				732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */,
 				73C0BD3A1FEF06D300DED67E /* CSVDataManager.swift in Sources */,
 				738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */,
+				738F0AFA20041F3B007088E7 /* RWDayTableViewCell.swift in Sources */,
 				737474581FFEED40005396DE /* ColorCode.swift in Sources */,
 				73D3C40B1FE99D550028FF0C /* AppDelegate.swift in Sources */,
 				73DDB1982002D0CE004F579B /* ContactInfoViewController.swift in Sources */,
@@ -614,6 +641,7 @@
 				73D3C4551FE9C7150028FF0C /* DataDownloader.swift in Sources */,
 				73BFC34D1FF428C300BB1C11 /* DayTableViewCell.swift in Sources */,
 				73BFC34A1FF424F800BB1C11 /* CalendarTableViewController.swift in Sources */,
+				738F0AF620041E92007088E7 /* ResearchWeekViewController.swift in Sources */,
 				73BFC3581FF5BFDA00BB1C11 /* ConsolePrintManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

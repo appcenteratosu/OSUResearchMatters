@@ -268,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piC-Br-lhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671.2" y="1113.1934032983509"/>
+            <point key="canvasLocation" x="1633" y="1154"/>
         </scene>
         <!--Research Compliance-->
         <scene sceneID="hpN-eh-YUk">
@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erv-TU-VFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="1112.2938530734634"/>
+            <point key="canvasLocation" x="2337" y="1154"/>
         </scene>
         <!--News Feed-->
         <scene sceneID="o9y-bD-8Kk">
@@ -1357,7 +1357,7 @@
                     <viewLayoutGuide key="safeArea" id="gJG-MV-ohp"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3038" y="856"/>
+            <point key="canvasLocation" x="3066" y="767"/>
         </scene>
         <!--Calendar Detail View Controller-->
         <scene sceneID="rGF-M1-QNS">
@@ -1451,36 +1451,114 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="say-x4-oJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3896" y="856"/>
+            <point key="canvasLocation" x="3849" y="767"/>
         </scene>
         <!--Research Week-->
-        <scene sceneID="4Jy-cs-xYx">
+        <scene sceneID="8Sw-lT-3y5">
             <objects>
-                <tableViewController id="Xls-a8-Uqg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qND-SA-h9r">
+                <viewController id="zbu-6l-8uJ" customClass="ResearchWeekViewController" customModule="OSUResearchMatters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZC2-g7-bu1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVW-NX-1ny">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Etu-IR-b9T"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-ax-yaV" userLabel="DayTable">
+                                <rect key="frame" x="0.0" y="128" width="109" height="490"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="day" rowHeight="114" id="t3w-Wn-v38" customClass="RWDayTableViewCell" customModule="OSUResearchMatters" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="109" height="114"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t3w-Wn-v38" id="1to-h7-3ix">
+                                            <rect key="frame" x="0.0" y="0.0" width="109" height="113.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-Tr-Xox">
+                                                    <rect key="frame" x="14.5" y="12" width="80" height="90"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OT-fM-6PP">
+                                                            <rect key="frame" x="21" y="8" width="40" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="45I-GK-snp"/>
+                                                        <constraint firstAttribute="height" constant="90" id="HqY-kG-t5r"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-Ia-zE4">
+                                                    <rect key="frame" x="42" y="42" width="25" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feb '18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dys-Lk-9YG">
+                                                    <rect key="frame" x="32" y="82" width="44" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.90588235289999997" green="0.56862745100000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="KbE-Tr-Xox" firstAttribute="centerX" secondItem="1to-h7-3ix" secondAttribute="centerX" id="Kuy-KT-RHP"/>
+                                                <constraint firstItem="KbE-Tr-Xox" firstAttribute="centerY" secondItem="1to-h7-3ix" secondAttribute="centerY" id="NoX-sJ-jJf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfMonth" destination="5cC-Ia-zE4" id="eLA-7Y-54m"/>
+                                            <outlet property="monthYear" destination="Dys-Lk-9YG" id="tFb-Kv-OiD"/>
+                                            <outlet property="weekDay" destination="8OT-fM-6PP" id="RQH-jd-Xwl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ReV-Db-4J9" userLabel="EventsTable">
+                                <rect key="frame" x="108" y="128" width="267" height="490"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bev-5L-0g1">
+                                        <rect key="frame" x="0.0" y="28" width="267" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bev-5L-0g1" id="XXX-Mw-Y6e">
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fFn-cc-ZQ0">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fFn-cc-ZQ0" id="bAx-lj-2NV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Xls-a8-Uqg" id="IfP-AO-2tl"/>
-                            <outlet property="delegate" destination="Xls-a8-Uqg" id="qXK-dg-13i"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Research Week" image="Research Week" id="ov9-z8-3Pq"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nUb-Cg-EuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="IVW-NX-1ny" firstAttribute="leading" secondItem="vZ5-OM-SbL" secondAttribute="leading" id="8v2-Yv-13s"/>
+                            <constraint firstItem="IVW-NX-1ny" firstAttribute="top" secondItem="ZC2-g7-bu1" secondAttribute="top" id="Anh-st-2S6"/>
+                            <constraint firstItem="IVW-NX-1ny" firstAttribute="trailing" secondItem="vZ5-OM-SbL" secondAttribute="trailing" id="VdI-xd-GFG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vZ5-OM-SbL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Research Week" image="Research Week" id="L6Y-54-O19"/>
+                    <connections>
+                        <outlet property="dayTableView" destination="ekT-ax-yaV" id="m37-Yc-QjD"/>
+                        <outlet property="eventsTableView" destination="ReV-Db-4J9" id="9nN-rh-2AY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohz-zW-wv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4828.125" y="-360.21126760563379"/>
+            <point key="canvasLocation" x="4808.8000000000002" y="-406.14692653673166"/>
         </scene>
         <!--Social-->
         <scene sceneID="nnL-Vr-1fc">
@@ -1509,7 +1587,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1b-3y-5g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5559.375" y="-359.15492957746477"/>
+            <point key="canvasLocation" x="6338" y="-367"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1525,13 +1603,13 @@
                         <segue destination="l1f-Rt-waC" kind="relationship" relationship="viewControllers" id="sTt-Nb-UaZ"/>
                         <segue destination="qXW-tp-akw" kind="relationship" relationship="viewControllers" id="CHD-zy-Em7"/>
                         <segue destination="TMb-4a-ZvK" kind="relationship" relationship="viewControllers" id="znb-Pg-gqO"/>
-                        <segue destination="Xls-a8-Uqg" kind="relationship" relationship="viewControllers" id="UwR-UC-bLA"/>
+                        <segue destination="zbu-6l-8uJ" kind="relationship" relationship="viewControllers" id="1X5-Ua-bNz"/>
                         <segue destination="wpX-72-GdH" kind="relationship" relationship="viewControllers" id="Quc-gJ-j8t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="-1165"/>
+            <point key="canvasLocation" x="3434" y="-1329"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="j07-jl-gDw">
