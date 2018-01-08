@@ -11,6 +11,7 @@
 		307D4E73ABD2EE7C77FCF281 /* Pods_OSUResearchMattersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */; };
 		732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */; };
 		737474581FFEED40005396DE /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737474571FFEED40005396DE /* ColorCode.swift */; };
+		738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */; };
 		73B4FA721FFC5151004828EB /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */; };
 		73B4FA761FFD9479004828EB /* CalendarDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */; };
 		73BFC34A1FF424F800BB1C11 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSUResearchMattersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		737474571FFEED40005396DE /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
+		738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResearchComplianceViewController.swift; path = OSUResearchMatters/Contact/ResearchComplianceViewController.swift; sourceTree = SOURCE_ROOT; };
 		73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetailTableViewCell.swift; sourceTree = "<group>"; };
 		73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		73DDB1922002CDC6004F579B /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */,
 				73DDB1932002CDF3004F579B /* ContactsViewController.swift */,
 				73DDB1972002D0CE004F579B /* ContactInfoViewController.swift */,
 				73DDB1952002CF85004F579B /* Contact.swift */,
@@ -602,6 +605,7 @@
 				73D3C43B1FE9B1B10028FF0C /* NewsFeedTableViewController.swift in Sources */,
 				732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */,
 				73C0BD3A1FEF06D300DED67E /* CSVDataManager.swift in Sources */,
+				738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */,
 				737474581FFEED40005396DE /* ColorCode.swift in Sources */,
 				73D3C40B1FE99D550028FF0C /* AppDelegate.swift in Sources */,
 				73DDB1982002D0CE004F579B /* ContactInfoViewController.swift in Sources */,

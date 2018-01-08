@@ -34,6 +34,15 @@ class ContactInfoViewController: UIViewController, MFMailComposeViewControllerDe
         phoneNumberLabel.text = contact.number
         emailAddressLabel.text = contact.email
         locationLabel.text = contact.location
+        
+        headerLabel.numberOfLines = 2
+        
+        phoneCaptionLabel.text = "Front Desk"
+        emailCaptionLabel.text = "\(contact.name) Office"
+        emailCaptionLabel.numberOfLines = 0
+        
+        phoneView.layer.cornerRadius = 5
+        emailVIew.layer.cornerRadius = 5
     }
     
     //MARK: - Outlets
@@ -48,6 +57,12 @@ class ContactInfoViewController: UIViewController, MFMailComposeViewControllerDe
     
     @IBOutlet weak var emailCaptionLabel: UILabel!
     @IBOutlet weak var emailAddressLabel: UILabel!
+    
+    
+    // MARK: - View Outlets
+    @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var emailVIew: UIView!
+    
     
     
     // MARK: - Functions
