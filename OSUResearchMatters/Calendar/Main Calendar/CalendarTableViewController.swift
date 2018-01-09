@@ -32,6 +32,11 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
                 self.indicator.stopAnimating()
             }
         }
+        
+        let logo = #imageLiteral(resourceName: "Header-2")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
 
     }
     

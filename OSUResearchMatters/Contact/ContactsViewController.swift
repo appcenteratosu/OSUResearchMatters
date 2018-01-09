@@ -13,7 +13,10 @@ class ContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let logo = #imageLiteral(resourceName: "Header-2")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,9 +28,9 @@ class ContactsViewController: UIViewController {
     //MARK: - Outlets
     
     @IBAction func openVPR(_ sender: Any) {
-        let vpr = Contact(name: "VPR",
-                          number: "405.744.1676",
-                          email: "rdiana@okstate.edu",
+        let vpr = Contact(name: "Vice President for Research",
+                          number: "405.744.6501",
+                          email: "vpr@okstate.edu",
                           location: "203 Whitehurst")
         openSelectedContact(contact: vpr)
     }
@@ -49,7 +52,7 @@ class ContactsViewController: UIViewController {
     }
     
     @IBAction func openHPCC(sender: Any) {
-        let HPCC = Contact(name: "HPCC",
+        let HPCC = Contact(name: "High Performance Computing Center",
                                number: "405.744.1695",
                                email: "hpcc@okstate.edu",
                                location: "106 Math Science")
@@ -57,7 +60,7 @@ class ContactsViewController: UIViewController {
     }
     
     @IBAction func openEPSCOR(sender: Any) {
-        let EPCS = Contact(name: "EPSCoR",
+        let EPCS = Contact(name: "Established Program to Stimulate Competitive Research",
                                number: "405.744.9964",
                                email: "vphillips@okepscor.org",
                                location: "415 Whitehurst")

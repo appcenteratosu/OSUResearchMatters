@@ -25,10 +25,10 @@ class ContactInfoViewController: UIViewController, MFMailComposeViewControllerDe
     
     // MARK: - Setup
     func setupUI() {
-        headerImage.layer.cornerRadius = headerImage.frame.size.height / 2
-        headerImage.layer.borderColor = UIColor.lightGray.cgColor
-        headerImage.layer.borderWidth = 2
-        headerImage.clipsToBounds = true
+//        headerImage.layer.cornerRadius = headerImage.frame.size.height / 2
+//        headerImage.layer.borderColor = UIColor.lightGray.cgColor
+//        headerImage.layer.borderWidth = 2
+//        headerImage.clipsToBounds = true
         
         headerLabel.text = contact.name
         phoneNumberLabel.text = contact.number
