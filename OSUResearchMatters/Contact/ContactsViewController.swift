@@ -13,17 +13,14 @@ class ContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let logo = #imageLiteral(resourceName: "Header-2")
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
+        Utilities.ViewSetup().setupHeader(vc: self)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //MARK: - Outlets
     
@@ -84,7 +81,7 @@ class ContactsViewController: UIViewController {
     }
     
     @IBAction func openMicroscpreLab(sender: Any) {
-        let ML = Contact(name: "Microscope Laboratory",
+        let ML = Contact(name: "Microscopy Laboratory",
                                number: "405.744.6765",
                                email: "microscopy@okstate.edu",
                                location: "1110 S. Innovation Way")
@@ -96,8 +93,7 @@ class ContactsViewController: UIViewController {
     func openSelectedContact(contact: Contact) {
         performSegue(withIdentifier: "showContactInfo", sender: contact)
     }
-    
-    
+
     
     
     

@@ -35,10 +35,10 @@ class ContactInfoViewController: UIViewController, MFMailComposeViewControllerDe
         emailAddressLabel.text = contact.email
         locationLabel.text = contact.location
         
-        headerLabel.numberOfLines = 2
+        headerLabel.numberOfLines = 3
         
         phoneCaptionLabel.text = "Front Desk"
-        emailCaptionLabel.text = "\(contact.name) Office"
+        emailCaptionLabel.text = "Office Email"
         emailCaptionLabel.numberOfLines = 0
         
         phoneView.layer.cornerRadius = 5

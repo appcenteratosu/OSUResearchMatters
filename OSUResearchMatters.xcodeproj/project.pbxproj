@@ -10,6 +10,7 @@
 		2216B0704AB43C97E7BBB322 /* Pods_OSUResearchMatters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA447C4434E0F0ED96AC2F91 /* Pods_OSUResearchMatters.framework */; };
 		307D4E73ABD2EE7C77FCF281 /* Pods_OSUResearchMattersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */; };
 		732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */; };
+		7339CFD62006B08500868F19 /* SocialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7339CFD52006B08500868F19 /* SocialTableViewController.swift */; };
 		737474581FFEED40005396DE /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737474571FFEED40005396DE /* ColorCode.swift */; };
 		738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */; };
 		738F0AF620041E92007088E7 /* ResearchWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */; };
@@ -66,6 +67,7 @@
 		460C71F91177192A00731A67 /* Pods-OSUResearchMattersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSUResearchMattersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSUResearchMattersTests/Pods-OSUResearchMattersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55DD3FE18104A035C02083A9 /* Pods_OSUResearchMattersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSUResearchMattersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732E75241FEC528A00C52600 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		7339CFD52006B08500868F19 /* SocialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTableViewController.swift; sourceTree = "<group>"; };
 		737474571FFEED40005396DE /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
 		738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResearchComplianceViewController.swift; path = OSUResearchMatters/Contact/ResearchComplianceViewController.swift; sourceTree = SOURCE_ROOT; };
 		738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchWeekViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 				95A23C96D0A4F3A738EBFD74 /* Pods-OSUResearchMattersUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7339CFD72006B08900868F19 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				7339CFD52006B08500868F19 /* SocialTableViewController.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		737474551FFEED00005396DE /* Calendar Detail */ = {
@@ -284,6 +294,7 @@
 				73D3C43E1FE9B1CD0028FF0C /* News Feed */,
 				73DDB1922002CDC6004F579B /* Contact */,
 				738F0AF720041E9C007088E7 /* Research Week */,
+				7339CFD72006B08900868F19 /* Social */,
 				73D3C4131FE99D550028FF0C /* Assets.xcassets */,
 				73D3C4151FE99D550028FF0C /* LaunchScreen.storyboard */,
 				73D3C4181FE99D550028FF0C /* Info.plist */,
@@ -323,9 +334,9 @@
 		73DDB1922002CDC6004F579B /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */,
 				73DDB1932002CDF3004F579B /* ContactsViewController.swift */,
 				73DDB1972002D0CE004F579B /* ContactInfoViewController.swift */,
+				738F0AF320041146007088E7 /* ResearchComplianceViewController.swift */,
 				73DDB1952002CF85004F579B /* Contact.swift */,
 			);
 			path = Contact;
@@ -500,9 +511,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OSUResearchMatters/Pods-OSUResearchMatters-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,6 +659,7 @@
 				732E75251FEC528A00C52600 /* NewsFeedTableViewCell.swift in Sources */,
 				73C0BD3A1FEF06D300DED67E /* CSVDataManager.swift in Sources */,
 				738F0AF420041146007088E7 /* ResearchComplianceViewController.swift in Sources */,
+				7339CFD62006B08500868F19 /* SocialTableViewController.swift in Sources */,
 				738F0AFA20041F3B007088E7 /* RWDayTableViewCell.swift in Sources */,
 				737474581FFEED40005396DE /* ColorCode.swift in Sources */,
 				73D3C40B1FE99D550028FF0C /* AppDelegate.swift in Sources */,
@@ -832,7 +848,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.OSUResearchMatters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -852,7 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.okstate.OSUResearchMatters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

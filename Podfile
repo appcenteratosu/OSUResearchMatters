@@ -11,6 +11,7 @@ pod 'Alamofire', '~> 4.5'
 pod 'AlamofireImage', '~> 3.3'
 pod 'SWXMLHash', '~> 4.0.0'
 pod 'SnapKit', '~> 4.0'
+pod 'TwitterKit'
 
   target 'OSUResearchMattersTests' do
     inherit! :search_paths
