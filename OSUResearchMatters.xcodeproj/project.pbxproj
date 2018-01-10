@@ -15,6 +15,7 @@
 		738F0AF620041E92007088E7 /* ResearchWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */; };
 		738F0AFA20041F3B007088E7 /* RWDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */; };
 		738F0AFC20042055007088E7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F0AFB20042055007088E7 /* Day.swift */; };
+		7390C0AC2005714500E615FF /* RWEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7390C0AB2005714500E615FF /* RWEventTableViewCell.swift */; };
 		73B4FA721FFC5151004828EB /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */; };
 		73B4FA761FFD9479004828EB /* CalendarDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */; };
 		73BFC34A1FF424F800BB1C11 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */; };
@@ -70,6 +71,7 @@
 		738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchWeekViewController.swift; sourceTree = "<group>"; };
 		738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWDayTableViewCell.swift; sourceTree = "<group>"; };
 		738F0AFB20042055007088E7 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		7390C0AB2005714500E615FF /* RWEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWEventTableViewCell.swift; sourceTree = "<group>"; };
 		73B4FA711FFC5151004828EB /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
 		73B4FA751FFD9479004828EB /* CalendarDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetailTableViewCell.swift; sourceTree = "<group>"; };
 		73BFC3491FF424F800BB1C11 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
@@ -179,18 +181,27 @@
 			isa = PBXGroup;
 			children = (
 				738F0AF520041E92007088E7 /* ResearchWeekViewController.swift */,
-				738F0AF820041EE6007088E7 /* Day View Controller */,
+				7390C0AA2005711C00E615FF /* Event Table Cell */,
+				738F0AF820041EE6007088E7 /* Day Table Cell */,
 			);
 			path = "Research Week";
 			sourceTree = "<group>";
 		};
-		738F0AF820041EE6007088E7 /* Day View Controller */ = {
+		738F0AF820041EE6007088E7 /* Day Table Cell */ = {
 			isa = PBXGroup;
 			children = (
 				738F0AF920041F3B007088E7 /* RWDayTableViewCell.swift */,
 				738F0AFB20042055007088E7 /* Day.swift */,
 			);
-			path = "Day View Controller";
+			path = "Day Table Cell";
+			sourceTree = "<group>";
+		};
+		7390C0AA2005711C00E615FF /* Event Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7390C0AB2005714500E615FF /* RWEventTableViewCell.swift */,
+			);
+			path = "Event Table Cell";
 			sourceTree = "<group>";
 		};
 		73BFC3481FF424C400BB1C11 /* Calendar */ = {
@@ -624,6 +635,7 @@
 				738F0AFC20042055007088E7 /* Day.swift in Sources */,
 				73C0BD371FEF06D300DED67E /* Event.swift in Sources */,
 				73BFC34F1FF42D5300BB1C11 /* EventsTableViewCell.swift in Sources */,
+				7390C0AC2005714500E615FF /* RWEventTableViewCell.swift in Sources */,
 				73C0BCE51FEEED6800DED67E /* WebViewViewController.swift in Sources */,
 				73B4FA761FFD9479004828EB /* CalendarDetailTableViewCell.swift in Sources */,
 				73DDB1942002CDF3004F579B /* ContactsViewController.swift in Sources */,

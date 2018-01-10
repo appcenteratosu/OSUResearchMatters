@@ -270,7 +270,9 @@ class CalendarDetailViewController: UITableViewController {
     func gotoAppleCalendar(date: Date) {
         let interval = date.timeIntervalSinceReferenceDate
         let url = URL(string: "calshow:\(interval)")!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     func showCalendarAlert(title: String, message: String, startDate: Date, endDate: Date) {
