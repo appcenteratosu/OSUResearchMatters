@@ -28,6 +28,8 @@ class NewsFeedTableViewController: UITableViewController {
     var imageList: [UIImage] = []
     
     func updateTableData() {
+        let loading = Utilities.TableViewManager(vc: self)
+        loading.setLoadingScreen()
         CPM().write(text: "Starting News Data Grab (NewsTVC)")
         beginUpdatingData { (articles) in
             self.articlesList = articles
@@ -35,6 +37,7 @@ class NewsFeedTableViewController: UITableViewController {
         
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                loading.removeLoadingScreen()
             }
         }
     }

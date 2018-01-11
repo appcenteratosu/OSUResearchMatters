@@ -12,11 +12,11 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Start Spinner
         CPM().write(text: "Starting Spinner")
-        indicator.startAnimating()
-        indicator.backgroundColor = #colorLiteral(red: 0.9633523822, green: 0.5470512509, blue: 0.2126187086, alpha: 1)
+        let loading = Utilities.TableViewManager(vc: self)
+        loading.setLoadingScreen()
         
         // Start download of events
         CPM().write(text: "Starting Calendar Data Grab and Sort")
@@ -29,14 +29,13 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 CPM().write(text: "Done reloading table data")
-                self.indicator.stopAnimating()
+                loading.removeLoadingScreen()
             }
         }
         
-        let logo = #imageLiteral(resourceName: "Header-2")
-        let imageView = UIImageView(image:logo)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
+        Utilities.ViewSetup().setupHeader(vc: self)
+
+        tableView.tableFooterView = UIView()
 
     }
     
@@ -99,77 +98,60 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return datesForDataSource.count
+        if datesForDataSource.count > 0 {
+            return datesForDataSource.count
+        } else {
+            return 1
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellItems = eventsForDataSource[indexPath.row]
-        let count = CGFloat(cellItems.count)
-        if count > 2 {
-            heightDictionary[indexPath.row] = count * 45
+        if datesForDataSource.count > 0 {
+            let cellItems = eventsForDataSource[indexPath.row]
+            let count = CGFloat(cellItems.count)
+            if count > 2 {
+                heightDictionary[indexPath.row] = count * 45
+            } else {
+                heightDictionary[indexPath.row] = 100
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayTableViewCell
+            cell.events = cellItems
+            cell.dsDelegate = self
+            
+            let day = datesForDataSource[indexPath.row]
+            let dayOfWeek = Utilities().getDayOfWeek(date: day)
+            let numericDay = Utilities().getNumericDay(date: day)
+            let monthYear = Utilities().getFormattedMonthAndYear(date: day)
+            
+            cell.dayOfWeekLabel.text = dayOfWeek
+            cell.calendarDayLabel.text = numericDay
+            cell.monthYearLabel.text = monthYear
+            
+            tableView.separatorStyle = .singleLine
+            
+            return cell
         } else {
-            heightDictionary[indexPath.row] = 100
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "nodayCell", for: indexPath)
+            cell2.textLabel?.text = "No Results"
+            
+            tableView.separatorStyle = .none
+            
+            return cell2
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath) as! DayTableViewCell
-        cell.events = cellItems
-        cell.dsDelegate = self
         
-        let day = datesForDataSource[indexPath.row]
-        let dayOfWeek = Utilities().getDayOfWeek(date: day)
-        let numericDay = Utilities().getNumericDay(date: day)
-        let monthYear = Utilities().getFormattedMonthAndYear(date: day)
-        
-        cell.dayOfWeekLabel.text = dayOfWeek
-        cell.calendarDayLabel.text = numericDay
-        cell.monthYearLabel.text = monthYear
-
-        return cell
     }
     
     
     var heightDictionary: [Int: CGFloat] = [:]
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return heightDictionary[indexPath.row]!
+        if datesForDataSource.count > 0 {
+            return heightDictionary[indexPath.row]!
+        } else {
+            return 30
+        }
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     
     // MARK: - Views
@@ -220,17 +202,31 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
                             self.view.endEditing(true)
                         }
                     })
+                } else {
+                    datesForDataSource = []
+                    eventsForDataSource = []
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.view.endEditing(true)
+                    }
                 }
             }
         } else {
-            getData { (dates, events) in
-                self.datesForDataSource = dates
-                self.eventsForDataSource = events
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.view.endEditing(true)
-                }
+            showAlert(title: "Oops!", message: "Please enter a search query")
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        
+        getData { (dates, events) in
+            self.datesForDataSource = dates
+            self.eventsForDataSource = events
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.endEditing(true)
             }
         }
     }
@@ -287,8 +283,16 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
         Utilities.Animation().animateOut(view: legend, vc: self)
     }
     
-    
-    
+    // ALERT
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
