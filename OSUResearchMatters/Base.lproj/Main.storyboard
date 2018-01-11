@@ -1048,6 +1048,7 @@
                         <outlet property="SpecialPrograms" destination="sJt-wf-I9v" id="eS3-bz-x2B"/>
                         <outlet property="TDC" destination="bAU-2J-dA2" id="16h-aL-ipB"/>
                         <outlet property="VPR" destination="xtM-EH-PER" id="wCT-Ai-oiE"/>
+                        <outlet property="doneButton" destination="7Nt-1V-dzk" id="5a9-0W-4YM"/>
                         <outlet property="legend" destination="YHe-e5-msM" id="E3s-kV-gOK"/>
                         <outlet property="searchBar" destination="KRn-WQ-UzP" id="NHU-QC-fEl"/>
                         <segue destination="dT5-ma-fUt" kind="show" identifier="showCalDetail" id="I6A-Lz-SCn"/>
@@ -1659,6 +1660,7 @@
                         <outlet property="TDC" destination="49c-8F-sRo" id="9MO-Ul-e8m"/>
                         <outlet property="VPR" destination="ywW-ec-95s" id="7fu-du-KHF"/>
                         <outlet property="dayTableView" destination="ekT-ax-yaV" id="m37-Yc-QjD"/>
+                        <outlet property="doneButton" destination="xhB-f2-OMw" id="dye-4f-3gP"/>
                         <outlet property="eventsTableView" destination="ReV-Db-4J9" id="9nN-rh-2AY"/>
                         <outlet property="legend" destination="2x8-0i-Bu4" id="N61-R4-WaA"/>
                         <segue destination="dT5-ma-fUt" kind="show" identifier="showEventDetails" id="QRq-E9-aEt"/>
@@ -2146,7 +2148,7 @@
         <image name="o" width="296" height="296"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I6A-Lz-SCn"/>
+        <segue reference="QRq-E9-aEt"/>
         <segue reference="3mS-1Z-pRh"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -220,15 +220,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         
-        getData { (dates, events) in
-            self.datesForDataSource = dates
-            self.eventsForDataSource = events
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.view.endEditing(true)
-            }
-        }
+        setEventsToDefault()
     }
     
     
@@ -241,11 +233,9 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     // MARK: - Legend Key Popup
     
     @IBAction func openLegend(_ sender: UIBarButtonItem) {
-        
         setupLegend {
             Utilities.Animation().animateIn(view: legend, vc: self)
         }
-        
     }
     
     
@@ -276,12 +266,75 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
             view?.layer.borderWidth = 2
             view?.layer.borderColor = UIColor.lightGray.cgColor
         }
+        
+        doneButton.layer.cornerRadius = 5
         completion()
     }
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBAction func closeLegend(_ sender: UIButton) {
         Utilities.Animation().animateOut(view: legend, vc: self)
     }
+    
+    func didSelectItemFromLegend(itemColor: UIColor) {
+        var eventsToSearch: [Event] = []
+        for set in eventsForDataSource {
+            eventsToSearch.append(contentsOf: set)
+        }
+        
+        var deptEvents: [Event] = []
+        for event in eventsToSearch {
+            if event.color == itemColor {
+                deptEvents.append(event)
+            }
+        }
+        
+        if deptEvents.count > 0 {
+            self.sortEventsByDate(eventsToSort: deptEvents, completion: { (sortedEvents) in
+                var dates: [Date] = []
+                var events: [[Event]] = []
+                for item in sortedEvents {
+                    dates.append(item.key)
+                    let eventList = item.value
+                    events.append(eventList)
+                }
+                self.datesForDataSource = dates
+                self.eventsForDataSource = events
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.view.endEditing(true)
+                    let item = UIBarButtonSystemItem.stop
+                    let refresh = UIBarButtonItem(barButtonSystemItem: item,
+                                                  target: self,
+                                                  action: #selector(self.setEventsToDefault))
+                    self.navigationItem.rightBarButtonItem = refresh
+                }
+            })
+        }
+        
+    }
+    
+    @objc func setEventsToDefault() {
+        getData { (dates, events) in
+            self.datesForDataSource = dates
+            self.eventsForDataSource = events
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.endEditing(true)
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(self.resetNavbarItem))
+            }
+        }
+    }
+    
+    @objc func resetNavbarItem() {
+        setupLegend {
+            
+        }
+    }
+    
+    
     
     // ALERT
     func showAlert(title: String, message: String) {

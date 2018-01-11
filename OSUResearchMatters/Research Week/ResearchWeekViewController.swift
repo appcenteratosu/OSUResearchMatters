@@ -219,9 +219,11 @@ class ResearchWeekViewController: UIViewController, UITableViewDelegate, UITable
             view?.layer.borderWidth = 2
             view?.layer.borderColor = UIColor.lightGray.cgColor
         }
+        doneButton.layer.cornerRadius = 5
         completion()
     }
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBAction func closeLegend(_ sender: UIButton) {
         Utilities.Animation().animateOut(view: legend, vc: self)
     }
