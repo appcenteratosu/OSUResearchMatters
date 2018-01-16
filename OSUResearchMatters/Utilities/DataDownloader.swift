@@ -59,15 +59,19 @@ class NetworkService {
     lazy var config: URLSessionConfiguration = .default
     lazy var session: URLSession = URLSession(configuration: self.config)
     
-    let url: URL
+    let url: URL?
     
     init(url: String) {
-        let url = URL(string: url)!
-        self.url = url
+        if let url = URL(string: url) {
+            self.url = url
+        } else {
+            print("ERROR")
+            self.url = nil
+        }
     }
     
     func downloadImage(completion: @escaping ((Data) -> Void)) {
-        let request = URLRequest(url: self.url)
+        let request = URLRequest(url: self.url!)
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
             if error != nil {
                 print("Error downloading data: ", error!.localizedDescription)
@@ -79,7 +83,7 @@ class NetworkService {
                             completion(data)
                         }
                     default:
-                        print(httpCode.statusCode)
+                        print("ERROR getting Image", httpCode.statusCode)
                     }
                 }
             }

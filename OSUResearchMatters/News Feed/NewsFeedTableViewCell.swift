@@ -35,14 +35,24 @@ class NewsFeedTableViewCell: UITableViewCell {
     
     func setupUI() {
         let thumbnailURL = article.imageURL
-        let networkService = NetworkService(url: thumbnailURL)
-        networkService.downloadImage { (data) in
-            if let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.aImage.image = image
+        if thumbnailURL.count > 0 {
+            let networkService = NetworkService(url: thumbnailURL)
+            networkService.downloadImage { (data) in
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.aImage.image = image
+                    }
+                } else {
+                    print("Could not process image")
                 }
             }
+        } else {
+            DispatchQueue.main.async {
+                self.aImage.image = #imageLiteral(resourceName: "IOS app icon 180px")
+            }
         }
+        self.aImage.layer.cornerRadius = 5
+        
     }
     
     

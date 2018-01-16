@@ -503,6 +503,30 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="RT0-W3-PMI">
+                            <rect key="frame" x="0.0" y="315" width="375" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-RC-7H1">
+                                    <rect key="frame" x="42" y="8" width="291" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8D-lg-WDl">
+                                            <rect key="frame" x="0.0" y="0.0" width="291" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Load More">
+                                                <color key="titleColor" red="0.86274509799999999" green="0.38431372549999998" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="loadMore:" destination="l1f-Rt-waC" eventType="touchUpInside" id="pVM-O5-2zU"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.32549500469999998" green="0.32548153400000002" blue="0.32549068330000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="187" id="QIF-p0-Fek" customClass="NewsFeedTableViewCell" customModule="OSUResearchMatters" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="375" height="187"/>
@@ -562,6 +586,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="News Feed" image="News Feed" id="gde-Tc-4sR"/>
                     <connections>
+                        <outlet property="loadMoreButton" destination="P8D-lg-WDl" id="kwF-Wf-guF"/>
                         <segue destination="6j7-Wq-Xay" kind="show" identifier="showWebView" id="OyH-bg-hM5"/>
                     </connections>
                 </tableViewController>
@@ -2148,7 +2173,7 @@
         <image name="o" width="296" height="296"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QRq-E9-aEt"/>
+        <segue reference="I6A-Lz-SCn"/>
         <segue reference="3mS-1Z-pRh"/>
     </inferredMetricsTieBreakers>
 </document>

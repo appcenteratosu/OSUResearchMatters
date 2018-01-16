@@ -17,6 +17,10 @@ class NewsFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTableData()
+        
+        DispatchQueue.main.async {
+            self.loadMoreButton.layer.cornerRadius = 5
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,7 @@ class NewsFeedTableViewController: UITableViewController {
         beginUpdatingData { (articles) in
             self.articlesList = articles
             CPM().write(text: "Done fetching News Data")
-        
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 loading.removeLoadingScreen()
@@ -124,7 +128,63 @@ class NewsFeedTableViewController: UITableViewController {
         }
         
     }
+    
+    // MARK: - Load More Functionality
+    
+    
+    @IBOutlet weak var loadMoreButton: UIButton!
+    @IBAction func loadMore(_ sender: UIButton) {
+        let loading = Utilities.TableViewManager(vc: self)
+        loading.setLoadingScreen()
+        
+        loadMore(offsetBy: getOffset()) { (articles) in
+            self.articlesList.append(contentsOf: articles)
+            
+            self.currentDataSet += 1
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                loading.removeLoadingScreen()
+            }
+        }
+        
+    }
+    
 
+    var currentDataSet: Int = 1
+    func getOffset() -> Int {
+        let numOfItems = 10
+        let offset = (currentDataSet) * numOfItems
+        print("OFFSET BY", offset)
+        return offset
+    }
+    
+    func loadMore(offsetBy: Int, completion: @escaping ([Articlee]) -> ()) {
+        let link = "https://omni.okstate.edu/_resources/php/news/rss-svc.php?tags=Research"
+        let offset = "&offset=\(offsetBy)"
+        let call = link + offset
+        DataDownloader().beginDataFetchwith(urlString: call) { (data, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                let xml = SWXMLHash.parse(data!)
+                let items = xml["rss"]["channel"]["item"]
+                
+                var articles: [Articlee] = []
+                do {
+                    let newsItems: [Articlee] = try items.value()
+                    articles = newsItems
+                } catch {
+                    print(error.localizedDescription)
+                }
+                
+                completion(articles)
+                
+            }
+        }
+        
+
+    }
     
     
     
