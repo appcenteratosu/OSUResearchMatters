@@ -602,9 +602,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-new 2" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-XT-pVL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-new 2" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-XT-pVL">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-cl-ZjC">
                                 <rect key="frame" x="8" y="124" width="359" height="330"/>
@@ -902,7 +901,11 @@
                         <constraints>
                             <constraint firstItem="wdI-cl-ZjC" firstAttribute="top" secondItem="Wu4-uZ-Ahu" secondAttribute="top" constant="8" id="Iq6-z8-R52"/>
                             <constraint firstItem="wdI-cl-ZjC" firstAttribute="leading" secondItem="Wu4-uZ-Ahu" secondAttribute="leading" constant="8" id="Jfw-MY-xzd"/>
+                            <constraint firstItem="nRt-XT-pVL" firstAttribute="top" secondItem="Wu4-uZ-Ahu" secondAttribute="top" id="Md5-im-MYW"/>
+                            <constraint firstItem="nRt-XT-pVL" firstAttribute="leading" secondItem="Wu4-uZ-Ahu" secondAttribute="leading" id="MfT-up-hN6"/>
                             <constraint firstItem="Wu4-uZ-Ahu" firstAttribute="trailing" secondItem="wdI-cl-ZjC" secondAttribute="trailing" constant="8" id="lY8-Tn-anV"/>
+                            <constraint firstAttribute="bottom" secondItem="nRt-XT-pVL" secondAttribute="bottom" id="rxl-2D-wuU"/>
+                            <constraint firstItem="nRt-XT-pVL" firstAttribute="trailing" secondItem="Wu4-uZ-Ahu" secondAttribute="trailing" id="w2b-iA-Ibr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wu4-uZ-Ahu"/>
                     </view>
@@ -913,7 +916,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0f-YJ-zZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="373"/>
+            <point key="canvasLocation" x="2580" y="372.86356821589209"/>
         </scene>
         <!--#OSURESEARCHMATTERS-->
         <scene sceneID="u6a-xF-bfY">
@@ -2174,6 +2177,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="I6A-Lz-SCn"/>
-        <segue reference="3mS-1Z-pRh"/>
+        <segue reference="20D-PE-ezK"/>
     </inferredMetricsTieBreakers>
 </document>

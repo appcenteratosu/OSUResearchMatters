@@ -257,6 +257,9 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     
     func setupLegend(completion: () -> ()) {
         legend.center = self.view.center
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        
         legend.layer.cornerRadius = 5
         
         let colorCodes = [VPR,DASNR, ArtsSciences,Business,Education,CEAT,HumanSciences,CVHS,GradCollege,Library,TDC,CenterForHealthSciences,SpecialPrograms]

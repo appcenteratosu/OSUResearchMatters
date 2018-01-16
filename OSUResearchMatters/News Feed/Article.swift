@@ -32,10 +32,7 @@ class Article {
         self.dateString = date.string
 
         self.description = description
-        
     }
-    
-    
 }
 
 struct Articlee: XMLIndexerDeserializable {
@@ -53,7 +50,7 @@ struct Articlee: XMLIndexerDeserializable {
             link: node["link"].value(),
             date: node["pubDate"].value(),
             description: node["description"].value(),
-            imageURL: node["media:content"].value(ofAttribute: "url"),
+            imageURL: node["media:content"]["media:thumbnail"].value(ofAttribute: "url"),
             image: nil
         )
     }
