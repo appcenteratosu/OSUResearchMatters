@@ -26,31 +26,65 @@ class Utilities {
     }
     
     func getFormattedDate(dateString: String) -> (string: String, date: Date) {
-        let ts = dateString.dropLast(9)
-        let day = ts.dropFirst(8)
-        let m = ts.dropFirst(5)
-        let month = m.dropLast(3)
-        let year = ts.dropLast(6)
         
-        let iDay = Int(String(day))
-        let iMonth = Int(String(month))
-        let iYear = Int(String(year))
+        let count = dateString.count
         
-        var components = DateComponents()
-        components.day = iDay
-        components.month = iMonth
-        components.year = iYear
-        
-        let cal = Calendar(identifier: .gregorian)
-        let date = cal.date(from: components)
-        
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .medium
-        
-        let formattedDate = formatter.string(from: date!)
-        
-        return (formattedDate, date!)
+        if count == 19 {
+            let ts = dateString.dropLast(9)
+            let day = ts.dropFirst(8)
+            let m = ts.dropFirst(5)
+            let month = m.dropLast(3)
+            let year = ts.dropLast(6)
+            
+            let iDay = Int(String(day))
+            let iMonth = Int(String(month))
+            let iYear = Int(String(year))
+            
+            var components = DateComponents()
+            components.day = iDay
+            components.month = iMonth
+            components.year = iYear
+            
+            let cal = Calendar(identifier: .gregorian)
+            let date = cal.date(from: components)
+            
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .medium
+            
+            let formattedDate = formatter.string(from: date!)
+            
+            return (formattedDate, date!)
+        } else {
+            let diff = count - 19
+            let ds = String(dateString.dropLast(diff))
+            
+            let ts = ds.dropLast(9)
+            let day = ts.dropFirst(8)
+            let m = ts.dropFirst(5)
+            let month = m.dropLast(3)
+            let year = ts.dropLast(6)
+            
+            let iDay = Int(String(day))
+            let iMonth = Int(String(month))
+            let iYear = Int(String(year))
+            
+            var components = DateComponents()
+            components.day = iDay
+            components.month = iMonth
+            components.year = iYear
+            
+            let cal = Calendar(identifier: .gregorian)
+            let date = cal.date(from: components)
+            
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .medium
+            
+            let formattedDate = formatter.string(from: date!)
+            
+            return (formattedDate, date!)
+        }
         
     }
     

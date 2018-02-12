@@ -64,7 +64,6 @@ class NewsFeedTableViewController: UITableViewController {
                 }
                 
                 completion(articles)
-                
             }
         }
     }

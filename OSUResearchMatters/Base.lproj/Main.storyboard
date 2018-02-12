@@ -73,10 +73,10 @@
                                 <rect key="frame" x="16" y="148" width="343" height="263.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXU-SE-IqP">
-                                        <rect key="frame" x="121.5" y="0.0" width="100.5" height="50"/>
+                                        <rect key="frame" x="121.5" y="0.0" width="100" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYZ-UD-BAG">
-                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2j0-QV-Bv6"/>
@@ -239,13 +239,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PDp-L5-ER9" firstAttribute="trailing" secondItem="aIf-Lc-Wt5" secondAttribute="trailing" id="FcW-Jr-eNn"/>
+                            <constraint firstItem="PDp-L5-ER9" firstAttribute="trailing" secondItem="aIf-Lc-Wt5" secondAttribute="trailing" id="08J-hx-stW"/>
                             <constraint firstItem="Hlp-Bs-UD5" firstAttribute="top" secondItem="aIf-Lc-Wt5" secondAttribute="top" constant="32" id="S9S-tk-cMK"/>
+                            <constraint firstItem="PDp-L5-ER9" firstAttribute="bottom" secondItem="aIf-Lc-Wt5" secondAttribute="bottom" id="TBg-V7-xJl"/>
+                            <constraint firstItem="PDp-L5-ER9" firstAttribute="top" secondItem="ZAB-dW-X9I" secondAttribute="top" id="UcH-3D-aWV"/>
                             <constraint firstItem="aIf-Lc-Wt5" firstAttribute="trailing" secondItem="Hlp-Bs-UD5" secondAttribute="trailing" constant="16" id="fGQ-u9-xr5"/>
                             <constraint firstItem="Hlp-Bs-UD5" firstAttribute="leading" secondItem="aIf-Lc-Wt5" secondAttribute="leading" constant="16" id="fc4-At-2aX"/>
-                            <constraint firstItem="PDp-L5-ER9" firstAttribute="top" secondItem="ZAB-dW-X9I" secondAttribute="top" id="iSb-PI-1mG"/>
-                            <constraint firstItem="PDp-L5-ER9" firstAttribute="bottom" secondItem="aIf-Lc-Wt5" secondAttribute="bottom" id="ugp-UW-jGT"/>
-                            <constraint firstItem="PDp-L5-ER9" firstAttribute="leading" secondItem="aIf-Lc-Wt5" secondAttribute="leading" id="whR-sQ-zTg"/>
+                            <constraint firstItem="PDp-L5-ER9" firstAttribute="leading" secondItem="aIf-Lc-Wt5" secondAttribute="leading" id="jIe-8r-nzI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aIf-Lc-Wt5"/>
                     </view>
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piC-Br-lhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1990" y="1154"/>
+            <point key="canvasLocation" x="1989.5999999999999" y="1153.6731634182909"/>
         </scene>
         <!--Research Compliance-->
         <scene sceneID="hpN-eh-YUk">
@@ -273,7 +273,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-new 2" translatesAutoresizingMaskIntoConstraints="NO" id="Rak-yB-gEB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4ZX-jn-UKg">
                                 <rect key="frame" x="8" y="146" width="359" height="100"/>
@@ -440,16 +440,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Rak-yB-gEB" secondAttribute="bottom" id="BJo-Y8-6Vu"/>
                             <constraint firstItem="4ZX-jn-UKg" firstAttribute="top" secondItem="ibR-5n-4hg" secondAttribute="top" constant="30" id="K7u-og-c77"/>
-                            <constraint firstItem="Rak-yB-gEB" firstAttribute="top" secondItem="KuU-iB-u3d" secondAttribute="top" id="Qja-ik-XMc"/>
+                            <constraint firstItem="Rak-yB-gEB" firstAttribute="top" secondItem="ibR-5n-4hg" secondAttribute="top" id="SSI-zQ-PyO"/>
+                            <constraint firstItem="Rak-yB-gEB" firstAttribute="leading" secondItem="ibR-5n-4hg" secondAttribute="leading" id="a5h-l3-z9p"/>
+                            <constraint firstItem="Rak-yB-gEB" firstAttribute="trailing" secondItem="ibR-5n-4hg" secondAttribute="trailing" id="cQP-lF-tv9"/>
                             <constraint firstItem="oP3-mu-hzV" firstAttribute="top" secondItem="4ZX-jn-UKg" secondAttribute="bottom" constant="12" id="dY9-1u-9iS"/>
-                            <constraint firstItem="Rak-yB-gEB" firstAttribute="leading" secondItem="ibR-5n-4hg" secondAttribute="leading" id="e9o-bv-kyc"/>
                             <constraint firstItem="oP3-mu-hzV" firstAttribute="leading" secondItem="ibR-5n-4hg" secondAttribute="leading" constant="8" id="gAR-gD-DPK"/>
                             <constraint firstItem="ibR-5n-4hg" firstAttribute="trailing" secondItem="oP3-mu-hzV" secondAttribute="trailing" constant="8" id="pA8-mT-Zfn"/>
                             <constraint firstItem="ibR-5n-4hg" firstAttribute="trailing" secondItem="4ZX-jn-UKg" secondAttribute="trailing" constant="8" id="tEH-9X-ntb"/>
-                            <constraint firstAttribute="bottom" secondItem="Rak-yB-gEB" secondAttribute="bottom" id="wxe-hf-QA9"/>
                             <constraint firstItem="4ZX-jn-UKg" firstAttribute="leading" secondItem="ibR-5n-4hg" secondAttribute="leading" constant="8" id="xSz-Tp-Om1"/>
-                            <constraint firstAttribute="trailing" secondItem="Rak-yB-gEB" secondAttribute="trailing" id="xkD-Pc-FsZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ibR-5n-4hg"/>
                     </view>
@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erv-TU-VFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="1154"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="1153.6731634182909"/>
         </scene>
         <!--News Feed-->
         <scene sceneID="o9y-bD-8Kk">
@@ -602,14 +602,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-new 2" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-XT-pVL">
-                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-new 2" translatesAutoresizingMaskIntoConstraints="NO" id="p9y-yl-4jy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-cl-ZjC">
-                                <rect key="frame" x="8" y="124" width="359" height="330"/>
+                                <rect key="frame" x="35.5" y="168.5" width="304" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qKu-te-NiP">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-ud-cHG">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -640,7 +641,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-HB-Qtp">
-                                                <rect key="frame" x="129.5" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="vKU-y3-8VA">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -669,7 +670,7 @@
                                                 <viewLayoutGuide key="safeArea" id="xCp-gb-GuE"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thC-j1-6lZ">
-                                                <rect key="frame" x="259" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="FPe-hd-9iA">
                                                         <rect key="frame" x="0.0" y="-1" width="99" height="101"/>
@@ -700,7 +701,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-tI-5Ym">
-                                        <rect key="frame" x="0.0" y="115" width="359" height="100"/>
+                                        <rect key="frame" x="0.0" y="115" width="304" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H5-Wy-hdi">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -731,7 +732,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxk-dq-mKF">
-                                                <rect key="frame" x="129.5" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-XP-IkC">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -760,7 +761,7 @@
                                                 <viewLayoutGuide key="safeArea" id="Y3D-L4-1mC"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-0I-xNT">
-                                                <rect key="frame" x="259" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-Nq-O1E">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -792,7 +793,7 @@
                                         <viewLayoutGuide key="safeArea" id="PJ4-Eq-WNE"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-2j-7T0">
-                                        <rect key="frame" x="0.0" y="230" width="359" height="100"/>
+                                        <rect key="frame" x="0.0" y="230" width="304" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-hH-Be4">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -823,7 +824,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMQ-K6-hHr">
-                                                <rect key="frame" x="129.5" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Yi5-DB-bj1">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -852,7 +853,7 @@
                                                 <viewLayoutGuide key="safeArea" id="5nh-dZ-eXd"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-DP-cy0">
-                                                <rect key="frame" x="259" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="1zQ-U2-hdx">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -884,28 +885,12 @@
                                         <viewLayoutGuide key="safeArea" id="JXR-KI-8fs"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="JYE-2j-7T0" firstAttribute="leading" secondItem="wdI-cl-ZjC" secondAttribute="leading" id="CmF-dH-3tg"/>
-                                    <constraint firstItem="lhd-tI-5Ym" firstAttribute="leading" secondItem="wdI-cl-ZjC" secondAttribute="leading" id="EkI-Rm-ogd"/>
-                                    <constraint firstItem="qKu-te-NiP" firstAttribute="leading" secondItem="wdI-cl-ZjC" secondAttribute="leading" id="Nee-5J-6z7"/>
-                                    <constraint firstItem="lhd-tI-5Ym" firstAttribute="top" secondItem="qKu-te-NiP" secondAttribute="bottom" constant="15" id="XcZ-cP-167"/>
-                                    <constraint firstAttribute="trailing" secondItem="qKu-te-NiP" secondAttribute="trailing" id="c5a-Lt-iRv"/>
-                                    <constraint firstAttribute="trailing" secondItem="lhd-tI-5Ym" secondAttribute="trailing" id="fhe-QR-1jN"/>
-                                    <constraint firstAttribute="trailing" secondItem="JYE-2j-7T0" secondAttribute="trailing" id="ktC-eD-0O2"/>
-                                    <constraint firstItem="JYE-2j-7T0" firstAttribute="top" secondItem="lhd-tI-5Ym" secondAttribute="bottom" constant="15" id="q9B-4B-c8f"/>
-                                    <constraint firstItem="qKu-te-NiP" firstAttribute="top" secondItem="wdI-cl-ZjC" secondAttribute="top" id="qU0-3K-eRU"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wdI-cl-ZjC" firstAttribute="top" secondItem="Wu4-uZ-Ahu" secondAttribute="top" constant="8" id="Iq6-z8-R52"/>
-                            <constraint firstItem="wdI-cl-ZjC" firstAttribute="leading" secondItem="Wu4-uZ-Ahu" secondAttribute="leading" constant="8" id="Jfw-MY-xzd"/>
-                            <constraint firstItem="nRt-XT-pVL" firstAttribute="top" secondItem="Wu4-uZ-Ahu" secondAttribute="top" id="Md5-im-MYW"/>
-                            <constraint firstItem="nRt-XT-pVL" firstAttribute="leading" secondItem="Wu4-uZ-Ahu" secondAttribute="leading" id="MfT-up-hN6"/>
-                            <constraint firstItem="Wu4-uZ-Ahu" firstAttribute="trailing" secondItem="wdI-cl-ZjC" secondAttribute="trailing" constant="8" id="lY8-Tn-anV"/>
-                            <constraint firstAttribute="bottom" secondItem="nRt-XT-pVL" secondAttribute="bottom" id="rxl-2D-wuU"/>
-                            <constraint firstItem="nRt-XT-pVL" firstAttribute="trailing" secondItem="Wu4-uZ-Ahu" secondAttribute="trailing" id="w2b-iA-Ibr"/>
+                            <constraint firstItem="wdI-cl-ZjC" firstAttribute="centerY" secondItem="0NL-Ap-g7Z" secondAttribute="centerY" id="gBV-HX-g4w"/>
+                            <constraint firstItem="wdI-cl-ZjC" firstAttribute="centerX" secondItem="0NL-Ap-g7Z" secondAttribute="centerX" id="l6A-Mh-sEU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wu4-uZ-Ahu"/>
                     </view>
