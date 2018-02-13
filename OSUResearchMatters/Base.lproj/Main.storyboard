@@ -607,10 +607,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-cl-ZjC">
-                                <rect key="frame" x="35.5" y="168.5" width="304" height="330"/>
+                                <rect key="frame" x="20" y="168.5" width="335" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qKu-te-NiP">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-ud-cHG">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -641,7 +641,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-HB-Qtp">
-                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="117.5" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="vKU-y3-8VA">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -670,7 +670,7 @@
                                                 <viewLayoutGuide key="safeArea" id="xCp-gb-GuE"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thC-j1-6lZ">
-                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="235" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="FPe-hd-9iA">
                                                         <rect key="frame" x="0.0" y="-1" width="99" height="101"/>
@@ -701,7 +701,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-tI-5Ym">
-                                        <rect key="frame" x="0.0" y="115" width="304" height="100"/>
+                                        <rect key="frame" x="0.0" y="115" width="335" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H5-Wy-hdi">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -732,7 +732,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxk-dq-mKF">
-                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="117.5" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-XP-IkC">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -761,7 +761,7 @@
                                                 <viewLayoutGuide key="safeArea" id="Y3D-L4-1mC"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-0I-xNT">
-                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="235" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-Nq-O1E">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -793,7 +793,7 @@
                                         <viewLayoutGuide key="safeArea" id="PJ4-Eq-WNE"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-2j-7T0">
-                                        <rect key="frame" x="0.0" y="230" width="304" height="100"/>
+                                        <rect key="frame" x="0.0" y="230" width="335" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-hH-Be4">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -824,7 +824,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMQ-K6-hHr">
-                                                <rect key="frame" x="102" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="117.5" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Yi5-DB-bj1">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -853,7 +853,7 @@
                                                 <viewLayoutGuide key="safeArea" id="5nh-dZ-eXd"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-DP-cy0">
-                                                <rect key="frame" x="204" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="235" y="0.0" width="100" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Conctact-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="1zQ-U2-hdx">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -889,6 +889,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wu4-uZ-Ahu" firstAttribute="trailing" secondItem="wdI-cl-ZjC" secondAttribute="trailing" constant="20" id="F09-Pp-ccK"/>
+                            <constraint firstItem="wdI-cl-ZjC" firstAttribute="leading" secondItem="Wu4-uZ-Ahu" secondAttribute="leading" constant="20" id="PD8-Yt-2d0"/>
                             <constraint firstItem="wdI-cl-ZjC" firstAttribute="centerY" secondItem="0NL-Ap-g7Z" secondAttribute="centerY" id="gBV-HX-g4w"/>
                             <constraint firstItem="wdI-cl-ZjC" firstAttribute="centerX" secondItem="0NL-Ap-g7Z" secondAttribute="centerX" id="l6A-Mh-sEU"/>
                         </constraints>
