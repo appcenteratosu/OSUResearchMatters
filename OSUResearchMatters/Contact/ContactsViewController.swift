@@ -50,7 +50,7 @@ class ContactsViewController: UIViewController {
     
     @IBAction func openHPCC(sender: Any) {
         let HPCC = Contact(name: "High Performance Computing Center",
-                               number: "405.744.1695",
+                               number: "405.744.1914",
                                email: "hpcc@okstate.edu",
                                location: "106 Math Science")
         openSelectedContact(contact: HPCC)
@@ -59,7 +59,7 @@ class ContactsViewController: UIViewController {
     @IBAction func openEPSCOR(sender: Any) {
         let EPCS = Contact(name: "Established Program to Stimulate Competitive Research",
                                number: "405.744.9964",
-                               email: "vphillips@okepscor.org",
+                               email: "ok.nsf.epscor@okepscor.org",
                                location: "415 Whitehurst")
         openSelectedContact(contact: EPCS)
     }
