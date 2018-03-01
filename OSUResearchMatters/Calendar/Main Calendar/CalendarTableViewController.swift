@@ -57,6 +57,14 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
         manager.formatDataForNewEventObject(url: "https://trumba.com/calendars/okstate-research.csv") { (events) in
             print("Completed Calendar Data Fetch (CalendarTVC)")
             print("* Starting Data Sort (CalendarTVC)")
+            
+            //test
+            for event in events {
+                print(event.subject, "---", event.sTime)
+            }
+            
+            
+            
             self.sortEventsByDate(eventsToSort: events, completion: { (sortedEvents) in
                 var dates: [Date] = []
                 var events: [[Event]] = []
