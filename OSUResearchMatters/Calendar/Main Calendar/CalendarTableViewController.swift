@@ -263,6 +263,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     @IBOutlet var CenterForHealthSciences: UIView!
     @IBOutlet var SpecialPrograms: UIView!
     
+    
     func setupLegend(completion: () -> ()) {
         legend.center = self.view.center
         let indexPath = IndexPath(row: 0, section: 0)
