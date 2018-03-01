@@ -1067,9 +1067,22 @@
                         <outlet property="SpecialPrograms" destination="sJt-wf-I9v" id="eS3-bz-x2B"/>
                         <outlet property="TDC" destination="bAU-2J-dA2" id="16h-aL-ipB"/>
                         <outlet property="VPR" destination="xtM-EH-PER" id="wCT-Ai-oiE"/>
+                        <outlet property="artSciencesStack" destination="nEi-Ba-65p" id="SiY-jk-wzJ"/>
+                        <outlet property="businessStack" destination="owj-ld-4z1" id="uO5-eX-oeF"/>
+                        <outlet property="ceatStack" destination="peP-lg-DrI" id="edX-N5-zd7"/>
+                        <outlet property="cvhsStack" destination="CiR-SX-Y4X" id="ITa-qz-Wd4"/>
+                        <outlet property="dasnrStack" destination="QhI-oo-UNF" id="3fk-fC-yLW"/>
                         <outlet property="doneButton" destination="7Nt-1V-dzk" id="5a9-0W-4YM"/>
+                        <outlet property="eduStack" destination="omG-ZO-iQl" id="QkY-bQ-oH2"/>
+                        <outlet property="gradStack" destination="uoS-rc-3jy" id="Pqx-26-EDc"/>
+                        <outlet property="healthschiStack" destination="jBV-lp-cs2" id="Yhu-WD-gTW"/>
+                        <outlet property="humansciStack" destination="dL1-cD-mK5" id="aPu-PE-wZV"/>
                         <outlet property="legend" destination="YHe-e5-msM" id="E3s-kV-gOK"/>
+                        <outlet property="libraryStack" destination="ZhE-uG-Igl" id="fQc-Qo-ci9"/>
                         <outlet property="searchBar" destination="KRn-WQ-UzP" id="NHU-QC-fEl"/>
+                        <outlet property="specialStack" destination="Z3t-d0-mBF" id="wbv-f0-XkF"/>
+                        <outlet property="tdcStack" destination="PgZ-Aq-Qcz" id="wdc-cN-4DC"/>
+                        <outlet property="vprStack" destination="8g0-zK-9EB" id="QbG-ry-5Sn"/>
                         <segue destination="dT5-ma-fUt" kind="show" identifier="showCalDetail" id="I6A-Lz-SCn"/>
                     </connections>
                 </tableViewController>
@@ -1340,8 +1353,100 @@
                                 <action selector="closeLegend:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="CEV-vZ-FdO"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-8R-WAH">
+                            <rect key="frame" x="16" y="25" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="zWd-F5-aXK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcH-Mh-Uxt">
+                            <rect key="frame" x="16" y="54" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="JjW-6z-tpZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XW-pt-ISe">
+                            <rect key="frame" x="16" y="83" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="ZEF-W3-oC5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAy-Yo-XCz">
+                            <rect key="frame" x="16" y="112" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="sD4-ci-hW5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOZ-ui-lBW">
+                            <rect key="frame" x="16" y="141" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="to4-bW-sLc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9B9-ll-Zy2">
+                            <rect key="frame" x="16" y="170" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="jJz-PL-j0J"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwP-R5-LTY">
+                            <rect key="frame" x="16" y="199" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="4ln-sY-ehl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mj-9k-i79">
+                            <rect key="frame" x="16" y="228" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="nTw-DZ-JhN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-jq-Z2y">
+                            <rect key="frame" x="16" y="257" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="xjk-GA-iMs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-l6-ffv">
+                            <rect key="frame" x="16" y="286" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="raI-1W-VKk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgQ-Yy-hzr">
+                            <rect key="frame" x="16" y="315" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="3sF-lf-tSz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFv-XU-lZL">
+                            <rect key="frame" x="16" y="344" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="aYB-lH-mV3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzc-jA-AQy">
+                            <rect key="frame" x="16" y="373" width="287" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="filterEventsByCollege:" destination="yKn-pN-Xu9" eventType="touchUpInside" id="rjf-aO-w0h"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="uoS-rc-3jy" firstAttribute="leading" secondItem="gJG-MV-ohp" secondAttribute="leading" constant="16" id="3uW-bT-gNe"/>
                         <constraint firstItem="gJG-MV-ohp" firstAttribute="trailing" secondItem="8g0-zK-9EB" secondAttribute="trailing" constant="16" id="5nf-6f-tTr"/>

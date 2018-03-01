@@ -250,19 +250,113 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
     @IBOutlet var legend: UIView!
     
     @IBOutlet var VPR: UIView!
-    @IBOutlet var DASNR: UIView!
-    @IBOutlet var ArtsSciences: UIView!
-    @IBOutlet var Business: UIView!
-    @IBOutlet var Education: UIView!
-    @IBOutlet var CEAT: UIView!
-    @IBOutlet var HumanSciences: UIView!
-    @IBOutlet var CVHS: UIView!
-    @IBOutlet var GradCollege: UIView!
-    @IBOutlet var Library: UIView!
-    @IBOutlet var TDC: UIView!
-    @IBOutlet var CenterForHealthSciences: UIView!
-    @IBOutlet var SpecialPrograms: UIView!
+    @IBOutlet weak var vprStack: UIStackView!
     
+    @IBOutlet var DASNR: UIView!
+    @IBOutlet weak var dasnrStack: UIStackView!
+    
+    @IBOutlet var ArtsSciences: UIView!
+    @IBOutlet weak var artSciencesStack: UIStackView!
+    
+    @IBOutlet var Business: UIView!
+    @IBOutlet weak var businessStack: UIStackView!
+    
+    @IBOutlet var Education: UIView!
+    @IBOutlet weak var eduStack: UIStackView!
+    
+    @IBOutlet var CEAT: UIView!
+    @IBOutlet weak var ceatStack: UIStackView!
+    
+    @IBOutlet var HumanSciences: UIView!
+    @IBOutlet weak var humansciStack: UIStackView!
+    
+    @IBOutlet var CVHS: UIView!
+    @IBOutlet weak var cvhsStack: UIStackView!
+    
+    @IBOutlet var GradCollege: UIView!
+    @IBOutlet weak var gradStack: UIStackView!
+    
+    @IBOutlet var Library: UIView!
+    @IBOutlet weak var libraryStack: UIStackView!
+    
+    @IBOutlet var TDC: UIView!
+    @IBOutlet weak var tdcStack: UIStackView!
+    
+    @IBOutlet var CenterForHealthSciences: UIView!
+    @IBOutlet weak var healthschiStack: UIStackView!
+    
+    @IBOutlet var SpecialPrograms: UIView!
+    @IBOutlet weak var specialStack: UIStackView!
+    
+
+    
+    @IBAction func filterEventsByCollege(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 1:
+            filterList(color: #colorLiteral(red: 0.9633523822, green: 0.5470512509, blue: 0.2126187086, alpha: 1))
+        case 2:
+            filterList(color: #colorLiteral(red: 0.6373615265, green: 0.6335752606, blue: 0.6402737498, alpha: 1))
+        case 3:
+            filterList(color: #colorLiteral(red: 0.1008877531, green: 0.1766014695, blue: 0.8010639548, alpha: 1))
+        case 4:
+            filterList(color: #colorLiteral(red: 0.006260619033, green: 0.4050496221, blue: 0, alpha: 1))
+        case 5:
+            filterList(color: #colorLiteral(red: 1, green: 0.9805650115, blue: 0, alpha: 1))
+        case 6:
+            filterList(color: #colorLiteral(red: 0.7549046874, green: 0.4226810932, blue: 1, alpha: 1))
+        case 7:
+            filterList(color: #colorLiteral(red: 0.5488849282, green: 0.4376385808, blue: 0.3732229471, alpha: 1))
+        case 8:
+            filterList(color: #colorLiteral(red: 0.9468200803, green: 0, blue: 0, alpha: 1))
+        case 9:
+            filterList(color: #colorLiteral(red: 0.4165593386, green: 0.8386890292, blue: 0.9972121119, alpha: 1))
+        case 10:
+            filterList(color: #colorLiteral(red: 0.9175626636, green: 0.8091819882, blue: 0.7050410509, alpha: 1))
+        case 11:
+            filterList(color: #colorLiteral(red: 0.1703742743, green: 0.912766397, blue: 0.3849914968, alpha: 1))
+        case 12:
+            filterList(color: #colorLiteral(red: 0.8673611879, green: 0.7446114421, blue: 0.2541623116, alpha: 1))
+        case 13:
+            filterList(color: #colorLiteral(red: 0.4165593386, green: 0.8386890292, blue: 0.9972121119, alpha: 1))
+        default:
+            print("Error filtering data")
+        }
+        
+    }
+    
+    func filterList(color: UIColor) {
+        var totalEvents: [Event] = []
+        for eventSet in eventsForDataSource {
+            for event in eventSet {
+                totalEvents.append(event)
+            }
+        }
+        
+        var filteredEvents: [Event] = []
+        for event in totalEvents {
+            if event.viewColor == color {
+                filteredEvents.append(event)
+            }
+        }
+        
+        sortEventsByDate(eventsToSort: filteredEvents) { (sortedEvents) in
+            var dates: [Date] = []
+            var events: [[Event]] = []
+            for item in sortedEvents {
+                dates.append(item.key)
+                let eventList = item.value
+                events.append(eventList)
+            }
+            
+            self.datesForDataSource = dates
+            self.eventsForDataSource = events
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     func setupLegend(completion: () -> ()) {
         legend.center = self.view.center
