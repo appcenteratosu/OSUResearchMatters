@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../XCODE/CSVParsing/CSVParsing/CSVParser/CSVDataManager.swift"
-            timestampString = "541624945.883114"
+            filePath = "../../../../XCODE/CSVParsing/CSVParsing/CSVParser/Event.swift"
+            timestampString = "541630172.406863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "formatDataForNewEventObject(url:completion:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "init(event:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../XCODE/CSVParsing/CSVParsing/CSVParser/Event.swift"
-            timestampString = "541554310.42257"
+            timestampString = "541630172.407533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "init(row:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "init(event:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OSUResearchMatters/Calendar/ColorCode.swift"
-            timestampString = "541554310.422637"
+            filePath = "../../../../XCODE/CSVParsing/CSVParsing/CSVParser/Event.swift"
+            timestampString = "541630172.407774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getSponsorColor(sponsor:)"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "init(event:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

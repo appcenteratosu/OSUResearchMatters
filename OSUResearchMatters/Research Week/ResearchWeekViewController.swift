@@ -136,14 +136,14 @@ class ResearchWeekViewController: UIViewController, UITableViewDelegate, UITable
             if events[indexPath.row].allDayEvent == "TRUE" {
                 cell.timestamp.text = "All Day Event"
             } else {
-                let start = events[indexPath.row].duration.start.Time()
-                let end = events[indexPath.row].duration.end.Time()
+                let start = events[indexPath.row].duration!.start.Time()
+                let end = events[indexPath.row].duration!.end.Time()
                 
                 let time = "\(start) - \(end)"
                 cell.timestamp.text = time
             }
             
-            cell.colorCode.backgroundColor = events[indexPath.row].color
+            cell.colorCode.backgroundColor = events[indexPath.row].viewColor
             cell.colorCode.layer.borderWidth = 1
             cell.colorCode.layer.borderColor = UIColor.darkGray.cgColor
             cell.colorCode.layer.cornerRadius = cell.colorCode.frame.size.height / 2

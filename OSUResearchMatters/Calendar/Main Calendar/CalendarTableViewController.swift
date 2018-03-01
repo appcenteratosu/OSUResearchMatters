@@ -287,7 +287,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
         
         var deptEvents: [Event] = []
         for event in eventsToSearch {
-            if event.color == itemColor {
+            if event.viewColor == itemColor {
                 deptEvents.append(event)
             }
         }
