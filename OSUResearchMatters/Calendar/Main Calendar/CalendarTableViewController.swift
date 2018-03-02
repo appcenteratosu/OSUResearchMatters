@@ -58,13 +58,6 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
             print("Completed Calendar Data Fetch (CalendarTVC)")
             print("* Starting Data Sort (CalendarTVC)")
             
-            //test
-            for event in events {
-                print(event.subject, "---", event.sTime)
-            }
-            
-            
-            
             self.sortEventsByDate(eventsToSort: events, completion: { (sortedEvents) in
                 var dates: [Date] = []
                 var events: [[Event]] = []
@@ -325,35 +318,41 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
         
     }
     
+    var areEventsBeingFiltered: Bool = false
     func filterList(color: UIColor) {
-        var totalEvents: [Event] = []
-        for eventSet in eventsForDataSource {
-            for event in eventSet {
-                totalEvents.append(event)
-            }
-        }
-        
-        var filteredEvents: [Event] = []
-        for event in totalEvents {
-            if event.viewColor == color {
-                filteredEvents.append(event)
-            }
-        }
-        
-        sortEventsByDate(eventsToSort: filteredEvents) { (sortedEvents) in
-            var dates: [Date] = []
-            var events: [[Event]] = []
-            for item in sortedEvents {
-                dates.append(item.key)
-                let eventList = item.value
-                events.append(eventList)
+        getData { (dates, events) in
+            var totalEvents: [Event] = []
+            for eventSet in events {
+                for event in eventSet {
+                    totalEvents.append(event)
+                }
             }
             
-            self.datesForDataSource = dates
-            self.eventsForDataSource = events
+            var filteredEvents: [Event] = []
+            for event in totalEvents {
+                if event.viewColor == color {
+                    filteredEvents.append(event)
+                }
+            }
             
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            self.sortEventsByDate(eventsToSort: filteredEvents) { (sortedEvents) in
+                var dates: [Date] = []
+                var events: [[Event]] = []
+                for item in sortedEvents {
+                    dates.append(item.key)
+                    let eventList = item.value
+                    events.append(eventList)
+                }
+                
+                self.datesForDataSource = dates
+                self.eventsForDataSource = events
+                
+                self.areEventsBeingFiltered = true
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(self.setEventsToDefault))
+                }
             }
         }
     }
@@ -429,7 +428,7 @@ class CalendarTableViewController: UITableViewController, DidSelectRowDelegate, 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.view.endEditing(true)
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(self.resetNavbarItem))
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: self, action: #selector(self.openLegend(_:)))
             }
         }
     }

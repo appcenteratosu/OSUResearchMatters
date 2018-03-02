@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSUResearchMatters/Calendar/Main Calendar/CalendarTableViewController.swift"
-            timestampString = "541638269.578071"
+            timestampString = "541652434.654788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "filterEventsByCollege(_:)"
             landmarkType = "7">
          </BreakpointContent>
