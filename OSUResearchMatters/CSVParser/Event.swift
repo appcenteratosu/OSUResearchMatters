@@ -7,32 +7,48 @@
 //
 
 import Foundation
+import UIKit
 
 /// Events are structed from headers from CSV file
 public class Event {
     
     // Change this class to represent the data that will be recieved from the URLSessionDataTask
     
-    public let subject: String
-    public let sDate: String
-    public let sTime: String
-    public let eDate: String
-    public let  eTime: String
-    public let  allDayEvent: String
-    public let  desc: String
-    public let  location: String
-    public let  link: String
-    public let  template: String
-    public let  audience: String
-    public let  building: String
-    public let  campus: String
-    public let  category: String
-    public let  contactEmail: String
-    public let  contactName: String
-    public let  Sponsor: String
-    public let  eventType: String
+    public var subject: String = ""
+    public var sDate: String = ""
+    public var sTime: String = ""
+    public var eDate: String = ""
+    public var eTime: String = ""
+    public var allDayEvent: String = ""
+    public var desc: String = ""
+    public var location: String = ""
+    public var link: String = ""
+    public var template: String = ""
+    public var audience: String = ""
+    public var building: String = ""
+    public var campus: String = ""
+    public var category: String = ""
+    public var contactEmail: String = ""
+    public var contactName: String = ""
+    public var contactPhone: String = ""
+    public var cost: String = ""
+    public var eventImage: String = ""
+    public var room: String = ""
+    public var Sponsor: String = ""
+    public var eventType: String = ""
     
-    public init(row: [String]) {
+    // Used as utility
+    var sortDate: Date?
+    var viewColor: UIColor?
+    var duration: DateInterval?
+    
+    init() {
+        
+    }
+    
+    public convenience init(row: [String]) {
+        self.init()
+        
         self.subject = row[0]
         self.sDate = row[1]
         self.sTime = row[2]
@@ -50,15 +66,127 @@ public class Event {
         self.template = row[9]
         self.audience = row[10]
         self.building = row[11]
-        self.campus = row[12]
-        self.category = row[13]
-        self.contactEmail = row[14]
-        self.contactName = row[15]
-        self.Sponsor = row[16]
-        self.eventType = row[17]
+        self.campus = row[11]
+        self.category = row[12]
+        self.contactEmail = row[13]
+        self.contactName = row[14]
+        self.contactPhone = row[15]
+        self.cost = row[16]
+        self.eventImage = row[17]
+        self.room = row[16]
+        self.Sponsor = row[17]
+        self.eventType = row[18]
+        
+        // Utility setup
+        
+        if let date = Utilities().toDate(str: sDate) {
+            self.sortDate = date
+        } else {
+            print("Could not parse string to date for Event Object (Event INIT)")
+        }
+        
+        self.viewColor = ColorCode().getSponsorColor(sponsor: self.Sponsor)
+        
+        let start = Utilities().toDate(strDate: sDate, withTime: sTime)!
+        let end = Utilities().toDate(strDate: eDate, withTime: eTime)!
+        self.duration = DateInterval(start: start, end: end)
+        
     }
+
+    convenience init(event: [String: String]) {
+        self.init()
+        
+        for item in event {
+            switch item.key {
+            case "Subject":
+                self.subject = item.value
+            case "Start Date":
+                self.sDate = item.value
+            case "Start Time":
+                self.sTime = item.value
+            case "End Date":
+                self.eDate = item.value
+            case "End Time":
+                self.eTime = item.value
+            case "All day event":
+                self.allDayEvent = item.value
+            case "Description":
+                self.desc = item.value
+            case "Location":
+                self.location = item.value
+            case "Web Link":
+                self.link = item.value
+            case "Event Template":
+                self.template = item.value
+            case "Audience":
+                self.audience = item.value
+            case "Building":
+                self.building = item.value
+            case "Campus":
+                self.campus = item.value
+            case "Category":
+                self.category = item.value
+            case "Contact Email":
+                self.contactEmail = item.value
+            case "Contact Name":
+                self.contactName = item.value
+            case "Contact Phone":
+                self.contactPhone = item.value
+            case "Cost":
+                self.cost = item.value
+            case "Event image":
+                self.eventImage = item.value
+            case "Room":
+                self.room = item.value
+            case "Sponsor":
+                self.Sponsor = item.value
+            case "Type of Event":
+                self.eventType = item.value
+            default:
+                print("ERROR Creating Event")
+            }
+        }
     
+        // Utility setup
+        
+        if let date = Utilities().toDate(str: sDate) {
+            self.sortDate = date
+        } else {
+            print("Could not parse string to date for Event Object (Event INIT)")
+        }
+        
+        self.viewColor = ColorCode().getSponsorColor(sponsor: self.Sponsor)
+        
+        let start = Utilities().toDate(strDate: sDate, withTime: sTime)!
+        let end = Utilities().toDate(strDate: eDate, withTime: eTime)!
+        self.duration = DateInterval(start: start, end: end)
     
-    
-    
+    }
+
+}
+
+extension String {
+    func contains(find: String) -> Bool {
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool {
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
+}
+
+extension Event {
+    func contains(searchItems: [String]) -> Bool {
+        for item in searchItems {
+            if self.subject.containsIgnoringCase(find: item) {
+                return true
+            } else if self.desc.containsIgnoringCase(find: item) {
+                return true
+            } else if self.category.containsIgnoringCase(find: item) {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
 }

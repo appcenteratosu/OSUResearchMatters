@@ -257,8 +257,7 @@
 				73C0BD331FEF06D300DED67E /* CSwiftV.swift */,
 				73C0BD351FEF06D300DED67E /* CSVDataManager.swift */,
 			);
-			name = CSVParser;
-			path = ../../../../../XCODE/CSVParsing/CSVParsing/CSVParser;
+			path = CSVParser;
 			sourceTree = "<group>";
 		};
 		73C0BD3B1FEF07EC00DED67E /* Utilities */ = {

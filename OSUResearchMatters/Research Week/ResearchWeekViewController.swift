@@ -21,7 +21,16 @@ class ResearchWeekViewController: UIViewController, UITableViewDelegate, UITable
         getEventsFromServer { (dates, events) in
             self.datesForTable = dates
             self.eventsForTable = events
-            self.events = self.eventsForTable[0]
+            
+            if events.count > 0 {
+                if self.eventsForTable[0].count > 0 {
+                    self.events = self.eventsForTable[0]
+                } else {
+                    self.events = []
+                }
+            } else {
+                self.events = []
+            }
             
             DispatchQueue.main.async {
                 self.dayTableView.reloadData()
@@ -29,8 +38,10 @@ class ResearchWeekViewController: UIViewController, UITableViewDelegate, UITable
                 
                 self.removeLoadingScreen()
                 
-                let index = IndexPath(row: 0, section: 0)
-                self.dayTableView.selectRow(at: index, animated: true, scrollPosition: .top)
+                if self.events.count > 0 {
+                    let index = IndexPath(row: 0, section: 0)
+                    self.dayTableView.selectRow(at: index, animated: true, scrollPosition: .top)
+                }
             }
         }
         

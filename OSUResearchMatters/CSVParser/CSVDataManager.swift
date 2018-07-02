@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 /// The CSV Data Manager is primarily reponsible for providing functionality for formatting fetched data into Event objects
 public class CSVDataManager {
@@ -24,7 +24,7 @@ public class CSVDataManager {
     ///   - completion: Hands back an array of Events
     public func formatDataForNewEventObject(url: String, completion: @escaping EventHandler)  {
         let dataManager = DataDownloader()
-        dataManager.beginDataFetch(with: url) { (data, error) in
+        dataManager.beginDataFetchwith(urlString: url) { (data, error) in
             if error != nil {
                 switch error! {
                 case DataDownloader.DataError.URLInvalid:
@@ -38,19 +38,86 @@ public class CSVDataManager {
                 // Format the data
                 let dataString = String(data: data!, encoding: .utf8)
                 let parser = CSwiftV(with: dataString!)
-                let rows = parser.rows
+                guard let keyedEvents = parser.keyedRows else { return }
                 
-                var events: [Event] = []
-                
-                for row in rows {
-                    let event = Event(row: row)
+                var events: [[String: String]] = [[:]]
+                let processor = CSVRowProcessor()
+                for eventKey in keyedEvents {
+                    let event = processor.checkForChanges(dic: eventKey)
                     events.append(event)
                 }
-                // Formatted Events
-                completion(events)
+                
+                let useable = self.findDuplicates(events: events)
+                
+                var preparedEvents: [Event] = []
+                for event in useable {
+                    if event.count > 0 {
+                        let newEvent = Event(event: event)
+                        preparedEvents.append(newEvent)
+                    }
+                }
+                
+                
+                
+                completion(preparedEvents)
             }
         }
     }
     
+    func findDuplicates(events: [[String: String]]) -> [[String: String]] {
+        var store: [String] = []
+        
+        for event in events {
+            if event.count > 0 {
+                let subject = event["Subject"]
+                
+                if store.contains(subject!) {
+                    print("Found duplicate")
+                } else {
+                    store.append(subject!)
+                }
+            }
+        }
+        
+        var eventsForUse: [[String: String]] = [[:]]
+        for item in store {
+            let event = events.first(where: { (dict) -> Bool in
+                return dict["Subject"] == item
+            })
+            
+            eventsForUse.append(event!)
+        }
+        
+        return eventsForUse
+    }
+    
     
 }
+
+struct CSVRowProcessor {
+    private func switchKey<T, U>(myDict: inout [T:U], fromKey: T, toKey: T) {
+        if let entry = myDict.removeValue(forKey: fromKey) {
+            myDict[toKey] = entry
+        }
+    }
+    
+    func checkForChanges(dic: [String: String]) -> [String: String] {
+        var dict = dic
+        for item in dict {
+            if item.key.contains("(") && item.key.contains(")") {
+                let proper = item.key.components(separatedBy: "(").first!
+                switchKey(myDict: &dict, fromKey: item.key, toKey: proper)
+            }
+            
+            //test
+            if item.value.contains(find: "\"") {
+                let proper = item.value.replacingOccurrences(of: "\"", with: "")
+                dict[item.key] = proper
+            }
+            
+        }
+        
+        return dict
+    }
+}
+
